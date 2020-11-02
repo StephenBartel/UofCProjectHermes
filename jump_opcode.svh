@@ -18,12 +18,9 @@ typedef enum [3:0] {
 	JSLE = 4'hd
 } jump_op;
 
-
-
 typedef struct packed {
 	jump_op op;
 	logic imm_or_reg;
 } jump_opcode_body;
 
 `endif
-
