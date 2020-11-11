@@ -23,14 +23,13 @@
 
 
 module jump_comparator(
-    input clk,
     input [63:0] a,
     input [63:0] b,
     input jump_op op,
     output reg jump
     );
     
-    always_ff @(posedge clk) begin
+    always_comb @(a, b, op) begin
         case(op)
             JA  : jump = '1;
             JEQ : jump = a == b;

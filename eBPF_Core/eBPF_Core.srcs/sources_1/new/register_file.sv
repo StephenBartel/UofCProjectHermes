@@ -32,19 +32,17 @@ module register_file(
     
     typedef logic [63:0] register;
     
-    register [16:0] bank;
+    register [16:0] gprs;
     logic [3:0] last_dst;
     
-    // read step
-    always_ff @(posedge clk) begin
-        dstRead <= bank[dst];
-        srcRead <= bank[src];
-    end
+    // read step    
+    assign dstRead = gprs[dst];
+    assign srcRead = gprs[src];
     
-    // write step is on opposite edge of clock to prevent data collisions
-    always_ff @(negedge clk) begin
+    // write step
+    always_ff @(posedge clk) begin
         if (writeEnable)
-            bank[dst] <= dstWrite;
+            gprs[dst] <= dstWrite;
     end
     
 endmodule
