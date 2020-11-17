@@ -25,7 +25,7 @@
 module jump_comparator(
     input [63:0] a,
     input [63:0] b,
-    input jump_op op,
+    input jumpOp_e op,
     output reg jump
     );
     

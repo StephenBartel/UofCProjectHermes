@@ -16,11 +16,11 @@ typedef enum [3:0] {
 	MOV = 4'hb,
 	ARSH = 4'hc,
 	BYTESHIFT = 4'hd
-} alu_op;
+} aluOp_e;
 
 typedef struct packed {
-	alu_op op;
+	aluOp_e op;
 	logic imm_or_reg;
-} ALU_opcode_body;
+} aluOpcodeBody_s;
 
 `endif

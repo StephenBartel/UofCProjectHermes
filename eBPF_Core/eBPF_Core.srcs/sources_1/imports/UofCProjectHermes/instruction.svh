@@ -13,26 +13,26 @@ typedef enum [2:0] {
 	ALU32 = 3'h4,
 	JMP   = 3'h5,
 	ALU64 = 3'h7
-} instruction_type;
+} instructionType_e;
 
 typedef union {
-	jump_opcode_body jump;
-	alu_opcode_body alu;
-	memory_opcode_body memory;
-} opcode_body;
+	jumpOpcodeBody_s jump;
+	aluOpcodeBody_s alu;
+	memoryOpcodeBody_s memory;
+} opcodeBody_u;
 
 typedef struct packed {
-	opcode_body body;
-	instruction_type type;
-} opcode;
+	opcodeBody_u body;
+	instructionType_e type;
+} opcode_s;
 
 typedef struct packed {
 	int imm;	// int is by default signed 32 bit
 	logic [15:0] offset;
 	logic [3:0] src;
 	logic [3:0] dst;
-	opcode_struct opcode;
-} instruction;
+	opcode_s opcode;
+} instruction_s;
 
 `endif
 
