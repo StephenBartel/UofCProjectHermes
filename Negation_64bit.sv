@@ -25,6 +25,6 @@ module Negation_64bit(
     output [63:0] c
     );
     
-    assign c = ~a;
+    assign c = -a;
     
 endmodule
