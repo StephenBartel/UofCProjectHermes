@@ -15,7 +15,7 @@ typedef enum [2:0] {
 	ALU64 = 3'h7
 } instructionType_e;
 
-typedef union {
+typedef union packed {
 	jumpOpcodeBody_s jump;
 	aluOpcodeBody_s alu;
 	memoryOpcodeBody_s memory;
@@ -23,12 +23,12 @@ typedef union {
 
 typedef struct packed {
 	opcodeBody_u body;
-	instructionType_e type;
+	instructionType_e inst_type;
 } opcode_s;
 
 typedef struct packed {
 	int imm;	// int is by default signed 32 bit
-	logic [15:0] offset;
+	shortint offset;   //shortint is by default sign 16 bit
 	logic [3:0] src;
 	logic [3:0] dst;
 	opcode_s opcode;

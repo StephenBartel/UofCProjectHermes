@@ -1,6 +1,6 @@
 `ifndef CONSTANTS
 `define CONSTANTS
 
-//stuff
+typedef bit signed [127:0] longlongint;
 
 `endif

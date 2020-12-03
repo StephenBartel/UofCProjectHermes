@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_Adder_32bit_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_Adder_32bit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="280001fs"></ZoomEndTime>
+      <Cursor1Time time="52249fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="91"></NameColumnWidth>
+      <ValueColumnWidth column_width="157"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="11" />
+   <wvobject type="array" fp_name="/tb_Adder_32bit/a">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/b">
+      <obj_property name="ElementShortName">b[31:0]</obj_property>
+      <obj_property name="ObjectShortName">b[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Adder_32bit/sub">
+      <obj_property name="ElementShortName">sub</obj_property>
+      <obj_property name="ObjectShortName">sub</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/result">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Adder_32bit/mismatch">
+      <obj_property name="ElementShortName">mismatch</obj_property>
+      <obj_property name="ObjectShortName">mismatch</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/MAXINT">
+      <obj_property name="ElementShortName">MAXINT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAXINT[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/MININT">
+      <obj_property name="ElementShortName">MININT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MININT[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/a_tests">
+      <obj_property name="ElementShortName">a_tests[6:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">a_tests[6:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/b_tests">
+      <obj_property name="ElementShortName">b_tests[6:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">b_tests[6:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/expected_sums">
+      <obj_property name="ElementShortName">expected_sums[6:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_sums[6:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Adder_32bit/expected_differences">
+      <obj_property name="ElementShortName">expected_differences[6:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_differences[6:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
