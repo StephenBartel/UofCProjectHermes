@@ -136,6 +136,7 @@ module tb_register_file;
     
     initial 
     begin
+      //main testing loop. 
        for(int i=0; i<16;i++)begin
             clk <= 1'b0;
             writeEnable_input <= writeEnable_input_vector[i*2];
