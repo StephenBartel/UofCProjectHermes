@@ -1,0 +1,13 @@
+Vivado Simulator 2019.2
+Time resolution is 1 ps
+test failed for a=  9223372036854775807 and b=  9223372036854775807
+expected   85070591730234615847396907784232501249, got                                        0
+test failed for a= -9223372036854775808 and b=  9223372036854775807
+expected  -85070591730234615856620279821087277056, got                                        0
+test failed for a=  9223372036854775807 and b= -9223372036854775808
+expected  -85070591730234615856620279821087277056, got                                        0
+test failed for a= -9223372036854775808 and b= -9223372036854775808
+expected   85070591730234615865843651857942052864, got                                        0
+test failed for a=                    4 and b=                    6
+expected                                       24, got                                        0
+$finish called at time : 120 ns : File "/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_Mult_64bit_.sv" Line 55
