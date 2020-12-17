@@ -46,10 +46,10 @@ endmodule
 
 
 module byteswap16(
-    input [15:0] src,
-    output [15:0] dst,
+    input [31:0] src,
+    output [31:0] dst,
     input [7:0] opcode
     );
-    
-    assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8]};  
+    // Only swap the lowest 2 bytes, leave the upper 2 bytes unchaged
+    assign dst = (opcode[3] == '0)? src : {src[31:16], src[7:0], src[15:8]};  
 endmodule
