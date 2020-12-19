@@ -21,9 +21,9 @@
 
 
 module Div_64bit(
-    input [63:0] a,
-    input [63:0] b,
-    output [63:0] y
+    input longint a,
+    input longint b,
+    output longint y
     );
     //Created as a module if we want to expand into our own custom implementation. 
     //Because we are only dealing with integer values, there is no worry

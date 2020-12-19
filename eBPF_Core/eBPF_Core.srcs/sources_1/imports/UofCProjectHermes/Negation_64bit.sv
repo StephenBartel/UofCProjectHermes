@@ -21,8 +21,8 @@
 
 
 module Negation_64bit(
-    input [63:0] a,
-    output [63:0] c
+    input longint a,
+    output longint c
     );
     
     assign c = -a;

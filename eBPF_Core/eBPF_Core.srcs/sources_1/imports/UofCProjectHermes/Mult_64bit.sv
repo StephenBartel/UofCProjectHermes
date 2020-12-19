@@ -19,11 +19,12 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "constants.svh"
 
 module Mult_64bit(
-    input [63:0] a,
-    input [63:0] b,
-    input [127:0] y
+    input longint a,
+    input longint b,
+    input longlongint y
     );
     //Can expand or do custom implementation. Reason for implementing as module
     //Used 128 bit result for 2x64bit multiplication. Can truncate or select fewer bits

@@ -21,8 +21,8 @@
 
 
 module Negation_32bit(
-    input [31:0] a,
-    output [31:0] c
+    input int a,
+    output int c
     );
     
     assign c = -a;
