@@ -1,0 +1,4 @@
+Running: xsim.dir/tb_Negation_64bit_behav/xsimk -simmode gui -wdb tb_Negation_64bit_behav.wdb -simrunnum 0 -socket 55513
+Design successfully loaded
+Design Loading Memory Usage: 43964 KB (Peak: 44084 KB)
+Design Loading CPU Usage: 30 ms

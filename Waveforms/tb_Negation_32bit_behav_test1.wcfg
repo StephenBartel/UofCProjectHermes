@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_Negation_32bit_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb_Negation_32bit" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="140001fs"></ZoomEndTime>
+      <Cursor1Time time="140000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="91"></NameColumnWidth>
+      <ValueColumnWidth column_width="157"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="7" />
+   <wvobject type="array" fp_name="/tb_Negation_32bit/a">
+      <obj_property name="ElementShortName">a[31:0]</obj_property>
+      <obj_property name="ObjectShortName">a[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Negation_32bit/result">
+      <obj_property name="ElementShortName">result[31:0]</obj_property>
+      <obj_property name="ObjectShortName">result[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb_Negation_32bit/mismatch">
+      <obj_property name="ElementShortName">mismatch</obj_property>
+      <obj_property name="ObjectShortName">mismatch</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Negation_32bit/MAXINT">
+      <obj_property name="ElementShortName">MAXINT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MAXINT[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Negation_32bit/MININT">
+      <obj_property name="ElementShortName">MININT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MININT[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Negation_32bit/a_tests">
+      <obj_property name="ElementShortName">a_tests[6:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">a_tests[6:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb_Negation_32bit/expected_results">
+      <obj_property name="ElementShortName">expected_results[6:0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">expected_results[6:0][31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+</wave_config>
