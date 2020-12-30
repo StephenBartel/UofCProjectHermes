@@ -8,10 +8,8 @@ Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.Adder_1bit
-Compiling module xil_defaultlib.Adder_16bit
-Compiling module xil_defaultlib.Adder_Subtractor_32bit
-Compiling module xil_defaultlib.Adder_Subtractor_64bit
+Compiling module xil_defaultlib.Hardware_Subtractor_64bit
+Compiling module xil_defaultlib.Hardware_Adder_64bit
 Compiling module xil_defaultlib.tb_Adder_64bit
 Compiling module xil_defaultlib.glbl
 Built simulation snapshot tb_Adder_64bit_behav

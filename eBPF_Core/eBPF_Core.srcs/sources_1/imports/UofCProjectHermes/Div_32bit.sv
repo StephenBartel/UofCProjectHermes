@@ -21,9 +21,9 @@
 
 
 module Div_32bit(
-    input [31:0] a,
-    input [31:0] b,
-    output [31:0] y
+    input int a,
+    input int b,
+    output int y
     );
     //Created as a module if we want to expand with our own custom implementation
     //Output is 32 bits since there is no worry of it being larger, due to values being

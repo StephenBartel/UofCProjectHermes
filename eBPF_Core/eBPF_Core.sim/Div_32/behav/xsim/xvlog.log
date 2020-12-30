@@ -2,5 +2,3 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/spencer/Documents/GitHu
 INFO: [VRFC 10-311] analyzing module Div_32bit
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/Div_32/new/tb_Div_32bit.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_Div_32bit
-INFO: [VRFC 10-2263] Analyzing Verilog file "/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/Div_32/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

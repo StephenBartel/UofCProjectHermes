@@ -21,9 +21,9 @@
 
 
 module Modulus_32bit(
-    input [31:0] a,
-    input [31:0] b,
-    output [31:0] c
+    input int a,
+    input int b,
+    output int c
     );
     
     assign c = a%b; 
