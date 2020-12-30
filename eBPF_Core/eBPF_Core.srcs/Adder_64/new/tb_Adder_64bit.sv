@@ -25,9 +25,8 @@
 module tb_Adder_64bit;
     //*Setup wires, vectors, signals etc. that will be used in the test
     longint a, b; // longint is a signed 64 bit value
-    logic sub;
-    longint result; // longint is a signed 64 bit value
-    logic mismatch;
+    longint sum, diff; // longint is a signed 64 bit value
+    logic sum_mismatch, diff_mismatch;
     
     // inputs and outputs to test
     const longint MAXLONGINT = 64'd9223372036854775807; // update
@@ -40,36 +39,28 @@ module tb_Adder_64bit;
     const longint expected_differences[6:0] = '{18, -9, 17, 0, -1, 1, 0};
     
     //*Setup the components which will be tested
-    Adder_Subtractor_64bit UUT(.a(a), .b(b), .sum(result), .sub(sub));
+    Hardware_Subtractor_64bit UUT_sub(.a(a), .b(b), .c(diff));
+    Hardware_Adder_64bit UUT_add(.a(a), .b(b), .c(sum));
+    
     
     initial begin
         assert ($size(a_tests) == $size(b_tests) &&
                 $size(a_tests) == $size(expected_sums) &&
                 $size(a_tests) == $size(expected_differences));
-        // Addition tests
-        sub = 1'b0;
         for (int i = 0; i < $size(a_tests); i++) begin
             a <= a_tests[i];
             b <= b_tests[i];
             #5
-            mismatch <= result != expected_sums[i];
+            sum_mismatch <= sum != expected_sums[i];
+            diff_mismatch <= diff != expected_differences[i];
             #15
-            if (mismatch) begin
+            if (sum_mismatch) begin
                 $display("addition test failed for a=%d and b=%d", a, b);
-                $display("expected %d, got %d", expected_sums[i], result);
+                $display("expected %d, got %d", expected_sums[i], sum);
             end
-        end
-        // Subtraction tests
-        sub = 1'b1;
-        for (int i = 0; i < $size(a_tests); i++) begin
-            a <= a_tests[i];
-            b <= b_tests[i];
-            #5
-            mismatch <= result != expected_differences[i];
-            #15
-            if (mismatch) begin
+            if (diff_mismatch) begin
                 $display("subtraction test failed for a=%d and b=%d", a, b);
-                $display("expected %d, got %d", expected_sums[i], result);
+                $display("expected %d, got %d", expected_differences[i], diff);
             end
         end
         $finish;

@@ -30,9 +30,9 @@ module alu_control_unit(
     output logic sub
     );
     
-    assign mod = op == MOD;
-    assign sub = op == SUB;
-    assign le = op == LE;
+    assign mod = ALUcontrol.op == MOD;
+    assign sub = ALUcontrol.op == SUB;
+    assign le = ALUcontrol.op == LE;
     assign op = ALUcontrol.op;
     assign bits32 = ALUcontrol.bits32;
 

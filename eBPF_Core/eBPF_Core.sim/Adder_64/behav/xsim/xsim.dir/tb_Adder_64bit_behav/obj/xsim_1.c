@@ -47,42 +47,34 @@
 #define alloca _alloca
 #endif
 typedef void (*funcp)(char *, char *);
-extern void execute_159(char*, char *);
-extern void execute_162(char*, char *);
-extern void execute_907(char*, char *);
-extern void execute_908(char*, char *);
-extern void execute_909(char*, char *);
-extern void execute_910(char*, char *);
-extern void execute_167(char*, char *);
-extern void execute_903(char*, char *);
-extern void execute_904(char*, char *);
-extern void vlog_const_rhs_process_execute_0_fast_no_reg_no_agg(char*, char*, char*);
-extern void execute_168(char*, char *);
-extern void execute_409(char*, char *);
-extern void execute_410(char*, char *);
-extern void execute_169(char*, char *);
-extern void execute_170(char*, char *);
-extern void execute_171(char*, char *);
-extern void execute_172(char*, char *);
-extern void execute_173(char*, char *);
-extern void execute_164(char*, char *);
-extern void execute_165(char*, char *);
-extern void execute_166(char*, char *);
-extern void execute_911(char*, char *);
-extern void execute_912(char*, char *);
-extern void execute_913(char*, char *);
-extern void execute_914(char*, char *);
-extern void execute_915(char*, char *);
+extern void execute_4(char*, char *);
+extern void execute_6(char*, char *);
+extern void execute_13(char*, char *);
+extern void execute_14(char*, char *);
+extern void execute_15(char*, char *);
+extern void execute_16(char*, char *);
+extern void execute_17(char*, char *);
+extern void execute_18(char*, char *);
+extern void execute_11(char*, char *);
+extern void execute_12(char*, char *);
+extern void execute_8(char*, char *);
+extern void execute_9(char*, char *);
+extern void execute_10(char*, char *);
+extern void execute_19(char*, char *);
+extern void execute_20(char*, char *);
+extern void execute_21(char*, char *);
+extern void execute_22(char*, char *);
+extern void execute_23(char*, char *);
 extern void vlog_transfunc_eventcallback(char*, char*, unsigned, unsigned, unsigned, char *);
 extern void transaction_0(char*, char*, unsigned, unsigned, unsigned);
 extern void transaction_1(char*, char*, unsigned, unsigned, unsigned);
 extern void vlog_transfunc_eventcallback_2state(char*, char*, unsigned, unsigned, unsigned, char *);
-funcp funcTab[30] = {(funcp)execute_159, (funcp)execute_162, (funcp)execute_907, (funcp)execute_908, (funcp)execute_909, (funcp)execute_910, (funcp)execute_167, (funcp)execute_903, (funcp)execute_904, (funcp)vlog_const_rhs_process_execute_0_fast_no_reg_no_agg, (funcp)execute_168, (funcp)execute_409, (funcp)execute_410, (funcp)execute_169, (funcp)execute_170, (funcp)execute_171, (funcp)execute_172, (funcp)execute_173, (funcp)execute_164, (funcp)execute_165, (funcp)execute_166, (funcp)execute_911, (funcp)execute_912, (funcp)execute_913, (funcp)execute_914, (funcp)execute_915, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_0, (funcp)transaction_1, (funcp)vlog_transfunc_eventcallback_2state};
-const int NumRelocateId= 30;
+funcp funcTab[22] = {(funcp)execute_4, (funcp)execute_6, (funcp)execute_13, (funcp)execute_14, (funcp)execute_15, (funcp)execute_16, (funcp)execute_17, (funcp)execute_18, (funcp)execute_11, (funcp)execute_12, (funcp)execute_8, (funcp)execute_9, (funcp)execute_10, (funcp)execute_19, (funcp)execute_20, (funcp)execute_21, (funcp)execute_22, (funcp)execute_23, (funcp)vlog_transfunc_eventcallback, (funcp)transaction_0, (funcp)transaction_1, (funcp)vlog_transfunc_eventcallback_2state};
+const int NumRelocateId= 22;
 
 void relocate(char *dp)
 {
-	iki_relocate(dp, "xsim.dir/tb_Adder_64bit_behav/xsim.reloc",  (void **)funcTab, 30);
+	iki_relocate(dp, "xsim.dir/tb_Adder_64bit_behav/xsim.reloc",  (void **)funcTab, 22);
 
 	/*Populate the transaction function pointer field in the whole net structure */
 }
@@ -92,19 +84,10 @@ void sensitize(char *dp)
 	iki_sensitize(dp, "xsim.dir/tb_Adder_64bit_behav/xsim.reloc");
 }
 
-	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
-
-void wrapper_func_0(char *dp)
-
-{
-
-}
-
 void simulate(char *dp)
 {
 		iki_schedule_processes_at_time_zero(dp, "xsim.dir/tb_Adder_64bit_behav/xsim.reloc");
-	wrapper_func_0(dp);
-
+	// Initialize Verilog nets in mixed simulation, for the cases when the value at time 0 should be propagated from the mixed language Vhdl net
 	iki_execute_processes();
 
 	// Schedule resolution functions for the multiply driven Verilog nets that have strength
