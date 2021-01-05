@@ -27,29 +27,37 @@
 
 module byteswap64(
     input [63:0] src,
-    output [63:0] dst,
+    input [63:0] imm,
+    output reg [63:0] dst,
     input [7:0] opcode
     );
     // We only need to check opcode[3], that is the only bit that changes in the opcode
-    assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8], src[23:16], src[31:24], src[39:32], src[47:40], src[55:48], src[63:56]};  
-    
+    always @(*) begin
+    case (imm)
+      64'd16: 
+           assign dst = (opcode[3] == '0)? src : {src[63:16], src[7:0], src[15:8]};
+      64'd32: 
+           assign dst = (opcode[3] == '0)? src : {src[63:32], src[7:0], src[15:8], src[23:16], src[31:24]};  
+      64'd64: 
+           assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8], src[23:16], src[31:24], src[39:32], src[47:40], src[55:48], src[63:56]};
+      default: ;// Exception
+    endcase
+    end
 endmodule
 
 module byteswap32(
     input [31:0] src,
-    output [31:0] dst,
+    input [31:0] imm,
+    output reg [31:0] dst,
     input [7:0] opcode
     );
-    assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8], src[23:16], src[31:24]};  
-    
-endmodule
-
-
-module byteswap16(
-    input [31:0] src,
-    output [31:0] dst,
-    input [7:0] opcode
-    );
-    // Only swap the lowest 2 bytes, leave the upper 2 bytes unchaged
-    assign dst = (opcode[3] == '0)? src : {src[31:16], src[7:0], src[15:8]};  
+    always @(*) begin
+    case (imm)
+      64'd16: 
+           assign dst = (opcode[3] == '0)? src : {src[31:16], src[7:0], src[15:8]};
+      64'd32: 
+           assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8], src[23:16], src[31:24]};  
+      default: ;// Exception
+    endcase
+    end
 endmodule
