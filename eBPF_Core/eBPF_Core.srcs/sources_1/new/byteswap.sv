@@ -11,8 +11,8 @@
 // Tool Versions: 
 // Description: 
 //      Byteswap changes the order of bytes so that the output is either in Big Endian (BE) or Little Endian (LE) ordering.
-//      If opcode is 0xd4 then the output is to be in LE ordering. Since our system uses LE by default, this requires no change
-//      If the opcode is 0xdc then the output is to be BE. So we reverse the order of our bytes. Note that the bits within any given byte 
+//      If ALUControl is 0xD then the output is to be in LE ordering. Since our system uses LE by default, this requires no change
+//      If the ALUControl is 0xE then the output is to be BE. So we reverse the order of our bytes. Note that the bits within any given byte 
 //          remain in the same order relative to each other.
 // 
 // Dependencies: 
@@ -23,23 +23,21 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
-
 module byteswap64(
     input [63:0] src,
     input [63:0] imm,
     output reg [63:0] dst,
-    input [7:0] opcode
+    input [3:0] ALUControl
     );
-    // We only need to check opcode[3], that is the only bit that changes in the opcode
+    
     always @(*) begin
     case (imm)
       64'd16: 
-           assign dst = (opcode[3] == '0)? src : {src[63:16], src[7:0], src[15:8]};
+           assign dst = (ALUControl == 4'hd)? src : {src[63:16], src[7:0], src[15:8]};
       64'd32: 
-           assign dst = (opcode[3] == '0)? src : {src[63:32], src[7:0], src[15:8], src[23:16], src[31:24]};  
+           assign dst = (ALUControl == 4'hd)? src : {src[63:32], src[7:0], src[15:8], src[23:16], src[31:24]};  
       64'd64: 
-           assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8], src[23:16], src[31:24], src[39:32], src[47:40], src[55:48], src[63:56]};
+           assign dst = (ALUControl == 4'hd)? src : {src[7:0], src[15:8], src[23:16], src[31:24], src[39:32], src[47:40], src[55:48], src[63:56]};
       default: ;// Exception
     endcase
     end
@@ -49,14 +47,15 @@ module byteswap32(
     input [31:0] src,
     input [31:0] imm,
     output reg [31:0] dst,
-    input [7:0] opcode
+    input [3:0] ALUControl
     );
+    
     always @(*) begin
     case (imm)
       64'd16: 
-           assign dst = (opcode[3] == '0)? src : {src[31:16], src[7:0], src[15:8]};
+           assign dst = (ALUControl == 4'hd)? src : {src[31:16], src[7:0], src[15:8]};
       64'd32: 
-           assign dst = (opcode[3] == '0)? src : {src[7:0], src[15:8], src[23:16], src[31:24]};  
+           assign dst = (ALUControl == 4'hd)? src : {src[7:0], src[15:8], src[23:16], src[31:24]};  
       default: ;// Exception
     endcase
     end
