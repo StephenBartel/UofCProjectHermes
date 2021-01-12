@@ -33,11 +33,11 @@ module byteswap64(
     always @(*) begin
     case (imm)
       64'd16: 
-           assign dst = (ALUControl == 4'hd)? src : {src[63:16], src[7:0], src[15:8]};
+           dst = (ALUControl == 4'hd)? src : {src[63:16], src[7:0], src[15:8]};
       64'd32: 
-           assign dst = (ALUControl == 4'hd)? src : {src[63:32], src[7:0], src[15:8], src[23:16], src[31:24]};  
+           dst = (ALUControl == 4'hd)? src : {src[63:32], src[7:0], src[15:8], src[23:16], src[31:24]};  
       64'd64: 
-           assign dst = (ALUControl == 4'hd)? src : {src[7:0], src[15:8], src[23:16], src[31:24], src[39:32], src[47:40], src[55:48], src[63:56]};
+           dst = (ALUControl == 4'hd)? src : {src[7:0], src[15:8], src[23:16], src[31:24], src[39:32], src[47:40], src[55:48], src[63:56]};
       default: ;// Exception
     endcase
     end
@@ -53,9 +53,9 @@ module byteswap32(
     always @(*) begin
     case (imm)
       64'd16: 
-           assign dst = (ALUControl == 4'hd)? src : {src[31:16], src[7:0], src[15:8]};
+           dst = (ALUControl == 4'hd)? src : {src[31:16], src[7:0], src[15:8]};
       64'd32: 
-           assign dst = (ALUControl == 4'hd)? src : {src[7:0], src[15:8], src[23:16], src[31:24]};  
+           dst = (ALUControl == 4'hd)? src : {src[7:0], src[15:8], src[23:16], src[31:24]};  
       default: ;// Exception
     endcase
     end

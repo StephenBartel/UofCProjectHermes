@@ -19,7 +19,7 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+`include "memory_opcode.svh"
 module dataMemory(
     input clk,
     input memWrite, // 1 for writing to memory, 0 is for not. Will always output reads, up to the Mux to select. 
@@ -66,14 +66,14 @@ module dataMemory(
           begin
                
                byteMemory[offset] = writeData[7:0];
-               if(sizeSelect != 2'b10)
+               if(sizeSelect != B)
                begin
                     byteMemory[offset + 1] = writeData[15:8];
-                    if(sizeSelect != 2'b01)
+                    if(sizeSelect != H)
                     begin
                         byteMemory[offset + 2] = writeData[23:16];
                         byteMemory[offset + 3] = writeData[31:24];
-                        if(sizeSelect != 2'b00)
+                        if(sizeSelect != W)
                         begin
                             byteMemory[offset + 4] = writeData[39:32];
                             byteMemory[offset + 5] = writeData[47:40];
@@ -88,14 +88,14 @@ module dataMemory(
           begin
               readData = 0;
               readData[7:0] = byteMemory[offset]; 
-               if(sizeSelect != 2'b10)
+               if(sizeSelect != B)
                begin
                     readData[15:8] = byteMemory[offset + 1];
-                    if(sizeSelect != 2'b01)
+                    if(sizeSelect != H)
                     begin
                        readData[23:16] = byteMemory[offset + 2]; 
                        readData[31:24] = byteMemory[offset + 3]; 
-                        if(sizeSelect != 2'b00)
+                        if(sizeSelect != W)
                         begin
                              readData[39:32] = byteMemory[offset + 4]; 
                              readData[47:40] = byteMemory[offset + 5]; 
