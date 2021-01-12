@@ -116,6 +116,7 @@ module CPU(
    assign writeData = (writeSrc == 1'b1 ) ? srcRead : immExtended;
   
   
-   //ControlUnit controlUnit( );
+   ControlUnit controlUnit(.opcode(opcode), .regwrite(regWrite), .memtoreg(memToReg), .memwrite(memWrite), .memread(memRead), .writesrc(writeSrc),
+    .Branch(comparatorControl), .alucontrol(ALUControl), .alusrca(ALUSrcA), .alusrcb(ALUSrcB), .bit_32(ALUBitSelect));
    
 endmodule
