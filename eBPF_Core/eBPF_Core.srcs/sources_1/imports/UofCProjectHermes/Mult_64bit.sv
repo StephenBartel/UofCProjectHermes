@@ -24,7 +24,7 @@
 module Mult_64bit(
     input longint a,
     input longint b,
-    input longlongint y
+    output longlongint y
     );
     //Can expand or do custom implementation. Reason for implementing as module
     //Used 128 bit result for 2x64bit multiplication. Can truncate or select fewer bits

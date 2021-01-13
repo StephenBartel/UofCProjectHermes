@@ -5,7 +5,7 @@
 // Company: 
 // Engineer: Spencer Comin
 // 
-// Create Date: 11/17/2020 04:53:30 PM
+// Create Date: 01/11/2021 09:56:00 AM
 // Design Name: 
 // Module Name: tb_ALU
 // Project Name: Hermes
@@ -21,101 +21,249 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "alu_opcode.svh"
+//`include "alu_opcode.svh"
+//`include "alu_control.svh"
 
 
 module tb_ALU;
     //Useful guide : https://verilogguide.readthedocs.io/en/latest/verilog/testbench.html
 
     //*Setup wires, vectors, signals etc. that will be used in the test
-    aluOp_e op;
-    logic [63:0] a;
-    logic [63:0] b;
-    logic [63:0] result;
+    logic [3:0] ALUControl;
+    logic is32Bit;
+    longint a;
+    longint b;
+    longint result;
     
-    //*Setup the components which will be tested
-    //MyModule UUT (.input(in),.output(out)) Note: UUT "unit under test" is standard naming convention for instantiated test component
+    logic mismatch;
     
-    //**INITIAL BLOCK**//
-    //initial begin
-    //
-    //Initial statement is executed once in a simulation, and is initiated at t=0. The commands in the initial block
-    //are executed sequentially. The initial block runs in parallel to other initial statements or computations. You
-    //can specify 0 to many initial blocks in a simulation. The primary purpose of the initial block is to initialize 
-    //any variables, signals, or ports. The initial block may also be used with delays (e.g. #20) to perform tests where
-    //inputs are changes sequentially according to these delays.See below. Initial blocks are not synthesizable in hardware and therefore
-    //are intended for simulations. 
-    //
-    //$finish can be specified at the end to terminate the session regardless of whatever else is running. 
-    //
-    //end
-    //**INITIAL BLOCK END**//
+    // constants for tests
+    const longint MAXLONGINT = 64'd9223372036854775807;
+    const longint MINLONGINT = ~MAXLONGINT;
+    const int MAXINT = 32'd2147483647;
+    const int MININT = ~MAXINT;
     
-    //**CLOCK**//
-    reg clk; //Clock signal used in synchronizing the test
-    localparam clock_half_period = 20; //Define the period of the clock in number of time units. 2*clock_half_period = clock_period
-    //Generate clock signal
-    always @(*) begin
-        clk = 1'b1; //1
-        #clock_half_period;
-        clk = 1'b0; //0
-        #clock_half_period;
-    end
-    //**END CLOCK**//
+    const longint a_64bit_tests[6:0] = '{15, 0, -1, MINLONGINT, MAXLONGINT, MINLONGINT, MAXLONGINT};
+    const longint b_64bit_tests[6:0] = '{-3, 9, -18, MINLONGINT, MINLONGINT, MAXLONGINT, MAXLONGINT};
     
-    //For testing, may be useful to use a vector of inputs and expected outputs. 
+    const int a_32bit_tests[6:0] = '{15, 0, -1, MININT, MAXINT, MININT, MAXINT};
+    const int b_32bit_tests[6:0] = '{-3, 9, -18, MININT, MININT, MAXINT, MAXINT};
     
-    //**SYNCHRONOUS ALWAYS BLOCK**//
-    always @(posedge clk)
-        begin
-        	//This is one option. 
-            //Vary inputs specified above with clock signal and/or delays. Consider all possible
-            //combinations of inputs and verify that it matches the expected output. Perhaps
-            //plot the expected waveform. This can be done by defining an expected_output wire
-            //and assigning the desired output value to this. Display message, when an error occurs e.g. using $display. 
-        end
-   //**SYNCHRONOUS ALWAYS BLOCK END**//
+    // expected results
+    const longint expected_64bit_sums[6:0]          = '{12, 9, -19, 0, -1, -1, -2};
+    const longint expected_64bit_differences[6:0]   = '{18, -9, 17, 0, -1, 1, 0};
+    const longint expected_64bit_negations[6:0]     = '{-15, 0, 1, MINLONGINT, -MAXLONGINT, MINLONGINT, -MAXLONGINT};
+    const longint expected_64bit_modulos[6:0]       = '{0, 0, -1, 0, MAXLONGINT, -1, 0};
+    const longint expected_64bit_divisions[6:0]     = '{-5, 0, 0, 1, 0, -1, 1};
+    const longint expected_64bit_products[6:0]      = '{-45, 0, 18, 0, -64'd9223372036854775808, -64'd9223372036854775808, 1};
+    const longint expected_64bit_OR[6:0]            = '{-1, 9, -1, -64'd9223372036854775808, -1, -1, 64'd9223372036854775807};
+    const longint expected_64bit_AND[6:0]           = '{13, 0, -18, -64'd9223372036854775808, 0, 0, 64'd9223372036854775807};
+    const longint expected_64bit_XOR[6:0]           = '{-14, 9, 17, 0, -1, -1, 0};
+    const longint expected_64bit_leftshifts[6:0]    = '{-64'd2305843009213693952, 0, -64'd70368744177664, -64'd9223372036854775808, 64'd9223372036854775807, 0, -64'd9223372036854775808};
+    const longint expected_64bit_lrightshifts[6:0]  = '{0, 0, 262143, -64'd9223372036854775808, 64'd9223372036854775807, 1, 0};
+    const longint expected_64bit_arightshifts[6:0]  = '{0, 0, -1, -64'd9223372036854775808, 64'd9223372036854775807, -1, 0};
 
-   //**COMBINATIONAL ALWAYS BLOCK**//
-   always @(*)
-   		begin
-   			//This is one option. 
-            //Vary inputs specified above using delays. Consider all possible
-            //combinations of inputs and verify that it matches the expected output. Perhaps
-            //plot the expected waveform. This can be done by defining an expected_output wire
-            //and assigning the desired output value to this. Display message, when an error occurs e.g. using $display. 
-            //a = 0; 
-            //b = 0; 
-            //expected_sum = sum_output[1]       expected_sum is a wire
-            //expected_carry = carry_output[1]   expected_carry is a wire
-            //#wait_time
-            //if(sum!=0||carry!=0)
-           	//	$display("Test failed for 00")
-           	//...
-   		end
 
-  	//**INITIAL BLOCK**//
-  	//initial begin
-  	//
-  	//This is one option. 
-    //a = 0; 
-    //b = 0; 
-    //expected_sum = sum_output[1]       expected_sum is a wire
-    //expected_carry = carry_output[1]   expected_carry is a wire
-    //#wait_time
-    //if(sum!=0||carry!=0)
-   	//	$display("Test failed for 00")
-   	//
-    //a = 1; 
-    //b = 0; 
-    //expected_sum = sum_output[2]       expected_sum is a wire
-    //expected_carry = carry_output[2]   expected_carry is a wire
-    //#wait_time
-    //if(sum!=1||carry!=0)
-   	//	$display("Test failed for 01")
-  	//
-  	//end
-    //**INITIAL BLOCK END**//
+    const int expected_32bit_sums[6:0]           = '{12, 9, -19, 0, -1, -1, -2};
+    const int expected_32bit_differences[6:0]    = '{18, -9, 17, 0, -1, 1, 0};
+    const int expected_32bit_negations[6:0]      = '{-15, 0, 1, MININT, -MAXINT, MININT, -MAXINT};
+    const int expected_32bit_modulos[6:0]        = '{0, 0, -1, 0, MAXINT, -1, 0};
+    const int expected_32bit_divisions[6:0]       = '{-5, 0, 0, 1, 0, -1, 1};
+    const int expected_32bit_products[6:0]       = '{-45, 0, 18, 0, -32'd2147483648, -32'd2147483648, 1};
+    const int expected_32bit_OR[6:0]             = '{-1, 9, -1, -32'd2147483648, -1, -1, 32'd2147483647};
+    const int expected_32bit_AND[6:0]            = '{13, 0, -18, -32'd2147483648, 0, 0, 32'd2147483647};
+    const int expected_32bit_XOR[6:0]            = '{-14, 9, 17, 0, -1, -1, 0};
+    const int expected_32bit_leftshifts[6:0]     = '{-32'd536870912, 0, -32'd16384, -32'd2147483648, 32'd2147483647, 0, -32'd2147483648};
+    const int expected_32bit_lrightshifts[6:0]   = '{0, 0, 262143, -32'd2147483648, 32'd2147483647, 1, 0};
+    const int expected_32bit_arightshifts[6:0]   = '{0, 0, -1, -32'd2147483648, 32'd2147483647, -1, 0};
+    
+    
+    const longint expected_LE16[6:0] ='{15, 0, 65535, 0, 65535, 0, 65535};
+    const longint expected_LE32[6:0] ='{15, 0, 64'd4294967295, 0, 64'd4294967295, 0, 64'd4294967295};
+    const longint expected_LE64[6:0] ='{15, 0, -1, -64'd9223372036854775808, 64'd9223372036854775807, -64'd9223372036854775808, 64'd9223372036854775807};
+    const longint expected_BE16[6:0] ='{3840, 0, 65535, 0, 65535, 0, 65535};
+    const longint expected_BE32[6:0] ='{64'd251658240, 0, 64'd4294967295, 0, 64'd4294967295, 0, 64'd4294967295};
+    const longint expected_BE64[6:0] ='{64'd1080863910568919040, 0, -1, 128, -129, 128, -129};
+
+  	ALU UUT(.ALUControl(ALUControl),
+  	        .operandA(a),
+  	        .operandB(b),
+  	        .is32Bit(is32Bit),
+  	        .ALUResult(result));
+  	        
+  	// helper tasks
+  	task verify_results_64(input string testname, input longint expected[6:0]);
+  	     for (int i = 0; i < $size(a_64bit_tests); i++) begin
+            a <= a_64bit_tests[i];
+            b <= b_64bit_tests[i];
+            #5
+            mismatch <= result != expected[i];
+            #15
+            if (mismatch) begin
+                $display("64 bit %s test failed for a=%d and b=%d", testname, a, b);
+                $display("expected %d, got %d", expected[i], result);
+            end
+         end
+  	endtask
+  	
+  	task verify_results_32(input string testname, input int expected[6:0]);
+  	     for (int i = 0; i < $size(a_32bit_tests); i++) begin
+            a <= {32'b0, a_32bit_tests[i]};
+            b <= {32'b0, b_32bit_tests[i]};
+            #5
+            mismatch <= result[31:0] != expected[i];
+            #15
+            if (mismatch) begin
+                $display("64 bit %s test failed for a=%d and b=%d", testname, a, b);
+                $display("expected %d, got %d", expected[i], result);
+            end
+         end
+  	endtask
+  	
+    initial begin
+  	
+         //64 bit tests
+         is32Bit = 0;
+         //addition
+         ALUControl = 4'h0;
+         verify_results_64("addition", expected_64bit_sums);
+         //subtraction
+         ALUControl = 4'h1;
+         verify_results_64("subtraction", expected_64bit_differences);
+         //multiplication
+         ALUControl = 4'h2;
+         verify_results_64("multiplication", expected_64bit_products);
+         //division
+         ALUControl = 4'h3;
+         verify_results_64("division", expected_64bit_divisions);
+         //or
+         ALUControl = 4'h4;
+         verify_results_64("OR", expected_64bit_OR);
+         //and
+         ALUControl = 4'h5;
+         verify_results_64("AND", expected_64bit_AND);
+         //lsh
+         ALUControl = 4'h6;
+         verify_results_64("left shift", expected_64bit_leftshifts);
+         //rsh
+         ALUControl = 4'h7;
+         verify_results_64("logic right shift", expected_64bit_lrightshifts);
+         //neg
+         ALUControl = 4'h8;
+         verify_results_64("negation", expected_64bit_negations);
+         //mod
+         ALUControl = 4'h9;
+         verify_results_64("modulus", expected_64bit_modulos);
+         //xor
+         ALUControl = 4'ha;
+         verify_results_64("XOR", expected_64bit_XOR);
+         //move
+         ALUControl = 4'hb;
+         verify_results_64("move", a_64bit_tests);
+         //arsh
+         ALUControl = 4'hc;
+         verify_results_64("arithmetic", expected_64bit_arightshifts);
+         //le
+         ALUControl = 4'hd;
+         for (int i = 0; i < $size(a_64bit_tests); i++) begin
+            a <= a_64bit_tests[i];
+            b <= 64'd16;
+            #5
+            mismatch <= result != expected_LE16[i];
+            #15
+            if (mismatch) begin
+                $display("LE 16 byteswap test failed for a=%d and b=%d", a, b);
+                $display("expected %d, got %d", expected_LE16[i], result);
+            end
+            b <= 64'd32;
+            #5
+            mismatch <= result != expected_LE32[i];
+            #15
+            if (mismatch) begin
+                $display("LE 32 byteswap test failed for a=%d and b=%d", a, b);
+                $display("expected %d, got %d", expected_LE32[i], result);
+            end
+            b <= 64'd64;
+            #5
+            mismatch <= result != expected_LE64[i];
+            #15
+            if (mismatch) begin
+                $display("LE 64 byteswap test failed for a=%d and b=%d", a, b);
+                $display("expected %d, got %d", expected_LE64[i], result);
+            end
+         end
+         //be
+         ALUControl = 4'he;
+         for (int i = 0; i < $size(a_64bit_tests); i++) begin
+            a <= a_64bit_tests[i];
+            b <= 64'd16;
+            #5
+            mismatch <= result != expected_BE16[i];
+            #15
+            if (mismatch) begin
+                $display("BE 16 byteswap test failed for a=%d and b=%d", a, b);
+                $display("expected %d, got %d", expected_BE16[i], result);
+            end
+            b <= 64'd32;
+            #5
+            mismatch <= result != expected_BE32[i];
+            #15
+            if (mismatch) begin
+                $display("BE 32 byteswap test failed for a=%d and b=%d", a, b);
+                $display("expected %d, got %d", expected_BE32[i], result);
+            end
+            b <= 64'd64;
+            #5
+            mismatch <= result != expected_BE64[i];
+            #15
+            if (mismatch) begin
+                $display("BE 64 byteswap test failed for a=%d and b=%d", a, b);
+                $display("expected %d, got %d", expected_BE64[i], result);
+            end
+         end
+         
+         //32 bit tests
+         is32Bit = 1;
+                  //addition
+         ALUControl = 4'h0;
+         verify_results_32("addition", expected_32bit_sums);
+         //subtraction
+         ALUControl = 4'h1;
+         verify_results_32("subtraction", expected_32bit_differences);
+         //multiplication
+         ALUControl = 4'h2;
+         verify_results_32("multiplication", expected_32bit_products);
+         //division
+         ALUControl = 4'h3;
+         verify_results_32("division", expected_32bit_divisions);
+         //or
+         ALUControl = 4'h4;
+         verify_results_32("OR", expected_32bit_OR);
+         //and
+         ALUControl = 4'h5;
+         verify_results_32("AND", expected_32bit_AND);
+         //lsh
+         ALUControl = 4'h6;
+         verify_results_32("left shift", expected_32bit_leftshifts);
+         //rsh
+         ALUControl = 4'h7;
+         verify_results_32("logic right shift", expected_32bit_lrightshifts);
+         //neg
+         ALUControl = 4'h8;
+         verify_results_32("negation", expected_32bit_negations);
+         //mod
+         ALUControl = 4'h9;
+         verify_results_32("modulus", expected_32bit_modulos);
+         //xor
+         ALUControl = 4'ha;
+         verify_results_32("XOR", expected_32bit_XOR);
+         //move
+         ALUControl = 4'hb;
+         verify_results_32("move", a_32bit_tests);
+         //arsh
+         ALUControl = 4'hc;
+         verify_results_32("arithmetic", expected_32bit_arightshifts);
+  	end
 
     //Consider test implementation within the context of continuous integration testing. 
     

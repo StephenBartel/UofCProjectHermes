@@ -30,11 +30,11 @@ module ALU(
     );
     wire [31:0] out32;
     wire [3:0] exception32;
-    ALU32(ALUControl, operandA[31:0], operandB[31:0], out32, exception32);
+    ALU32 alu32(ALUControl, operandA[31:0], operandB[31:0], out32, exception32);
     
     wire [63:0] out64;
     wire [3:0] exception64;
-    ALU64(ALUControl, operandA, operandB, out64, exception64);
+    ALU64 alu64(ALUControl, operandA, operandB, out64, exception64);
     
     assign ALUResult = (is32Bit)? {32'b0, out32}: out64;
     assign arithmeticExc = (is32Bit)? exception32: exception64;    
@@ -48,43 +48,43 @@ module ALU32(
     output [3:0] arithmeticExc
     );
     wire [31:0] add_result;
-    Hardware_Adder_32bit(A, B, add_result);
+    Hardware_Adder_32bit adder_(A, B, add_result);
     
     wire [31:0] sub_result;
-    Hardware_Subtractor_32bit(A, B, sub_result);
+    Hardware_Subtractor_32bit subtractor(A, B, sub_result);
     
     wire [31:0] mul_result;
-    Mult_32bit(A, B, mul_result);
+    Mult_32bit multiplier(A, B, mul_result);
     
     wire [31:0] div_result;
-    Div_32bit(A, B, div_result);
+    Div_32bit divider(A, B, div_result);
     
     wire [31:0] or_result;
-    Or_32bit(A, B, or_result);
+    Or_32bit bitwiseOr(A, B, or_result);
     
     wire [31:0] and_result;
-    And_32bit(A, B, and_result);
+    And_32bit bitwiseAnd(A, B, and_result);
     
     wire [31:0] lsh_result;
-    Lsh_32bit(A, B, lsh_result);
+    Lsh_32bit leftshift(A, B, lsh_result);
     
     wire [31:0] rsh_result;
-    Rsh_32bit(A, B, rsh_result);   
+    Rsh_32bit rightshift(A, B, rsh_result);   
      
     wire [31:0] neg_result;
-    Negation_32bit(A, neg_result);   
+    Negation_32bit negator(A, neg_result);   
         
     wire [31:0] mod_result;
-    Modulus_32bit(A, B, mod_result);   
+    Modulus_32bit modulus(A, B, mod_result);   
         
     wire [31:0] xor_result;
-    Xor_32bit(A, B, xor_result);   
+    Xor_32bit bitwiseXor(A, B, xor_result);   
         
     wire [31:0] arsh_result;
-    Signed_Rsh_32bit(A, B, arsh_result);   
+    Signed_Rsh_32bit arithmeticRightShift(A, B, arsh_result);   
         
     wire [31:0] byteswap_result;
-    byteswap32(A, B, byteswap_result, ALUControl);
+    byteswap32 byteswap(A, B, byteswap_result, ALUControl);
         
     
     always @(*) begin
@@ -125,50 +125,50 @@ endmodule
 
 module ALU64(
     input [3:0] ALUControl,
-    input [63:0] operandA,
-    input [63:0] operandB,
+    input [63:0] A,
+    input [63:0] B,
     output reg [63:0] ALUResult,
     output [3:0] arithmeticExc
     );
     
     wire [63:0] add_result;
-    Hardware_Adder_64bit(A, B, add_result);
+    Hardware_Adder_64bit adder(A, B, add_result);
     
     wire [63:0] sub_result;
-    Hardware_Subtractor_64bit(A, B, sub_result);
+    Hardware_Subtractor_64bit subtractor(A, B, sub_result);
     
     wire [63:0] mul_result;
-    Mult_64bit(A, B, mul_result);
+    Mult_64bit multiplier(A, B, mul_result);
     
     wire [63:0] div_result;
-    Div_64bit(A, B, div_result);
+    Div_64bit divider(A, B, div_result);
     
     wire [63:0] or_result;
-    Or_64bit(A, B, or_result);
+    Or_64bit bitwiseOr(A, B, or_result);
     
     wire [63:0] and_result;
-    And_64bit(A, B, and_result);
+    And_64bit bitwiseAnd(A, B, and_result);
     
     wire [63:0] lsh_result;
-    Lsh_64bit(A, B, lsh_result);
+    Lsh_64bit leftshift(A, B, lsh_result);
     
     wire [63:0] rsh_result;
-    Rsh_64bit(A, B, rsh_result);   
+    Rsh_64bit rightshift(A, B, rsh_result);   
      
     wire [63:0] neg_result;
-    Negation_64bit(A, neg_result);   
+    Negation_64bit negator(A, neg_result);   
         
     wire [63:0] mod_result;
-    Modulus_64bit(A, B, mod_result);   
+    Modulus_64bit modulus(A, B, mod_result);   
         
     wire [63:0] xor_result;
-    Xor_64bit(A, B, xor_result);   
+    Xor_64bit bitwiseXor(A, B, xor_result);   
         
     wire [63:0] arsh_result;
-    Signed_Rsh_64bit(A, B, arsh_result);   
+    Signed_Rsh_64bit arithmeticRightShift(A, B, arsh_result);   
         
     wire [63:0] byteswap_result;
-    byteswap64(A, B, byteswap_result, ALUControl);
+    byteswap64 byteswap(A, B, byteswap_result, ALUControl);
         
     
     always @(*) begin
