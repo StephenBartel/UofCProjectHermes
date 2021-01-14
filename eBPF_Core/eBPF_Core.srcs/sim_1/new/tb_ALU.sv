@@ -49,6 +49,25 @@ module tb_ALU;
     const int a_32bit_tests[6:0] = '{15, 0, -1, MININT, MAXINT, MININT, MAXINT};
     const int b_32bit_tests[6:0] = '{-3, 9, -18, MININT, MININT, MAXINT, MAXINT};
     
+    /*
+    << 32 BIT: {-536870912, 0, -16384, -2147483648, 2147483647, 0, -2147483648, }
+    << 64 BIT: {-2305843009213693952, 0, -70368744177664, -9223372036854775808, 9223372036854775807, 0, -9223372036854775808, }
+    >> 32 BIT: {0, 0, 262143, -2147483648, 2147483647, 1, 0, }
+    >> 64 BIT: {0, 0, 262143, -9223372036854775808, 9223372036854775807, 1, 0, }
+    % 32 BIT: {0, 0, -1, 0, 2147483647, -1, 0, }
+    % 64 BIT: {0, 0, -1, 0, 9223372036854775807, -1, 0, }
+    ^ 32 BIT: {-14, 9, 17, 0, -1, -1, 0, }
+    ^ 64 BIT: {-14, 9, 17, 0, -1, -1, 0, }
+    >>> 32 BIT: {0, 0, -1, -2147483648, 2147483647, -1, 0, }
+    >>> 64 BIT: {0, 0, -1, -9223372036854775808, 9223372036854775807, -1, 0, }
+    LE 16: {15, 0, 65535, 0, 65535, 0, 65535, }
+    LE 32: {15, 0, 4294967295, 0, 4294967295, 0, 4294967295, }
+    LE 64: {15, 0, -1, -9223372036854775808, 9223372036854775807, -9223372036854775808, 9223372036854775807, }
+    BE 16: {3840, 0, 65535, 0, 65535, 0, 65535, }
+    BE 32: {251658240, 0, 4294967295, 0, 4294967295, 0, 4294967295, }
+    BE 64: {1080863910568919040, 0, -1, 128, -129, 128, -129, }
+    */
+    
     // expected results
     const longint expected_64bit_sums[6:0]          = '{12, 9, -19, 0, -1, -1, -2};
     const longint expected_64bit_differences[6:0]   = '{18, -9, 17, 0, -1, 1, 0};
@@ -114,7 +133,7 @@ module tb_ALU;
             mismatch <= result[31:0] != expected[i];
             #15
             if (mismatch) begin
-                $display("64 bit %s test failed for a=%d and b=%d", testname, a, b);
+                $display("32 bit %s test failed for a=%d and b=%d", testname, a, b);
                 $display("expected %d, got %d", expected[i], result);
             end
          end
@@ -162,7 +181,7 @@ module tb_ALU;
          verify_results_64("move", a_64bit_tests);
          //arsh
          ALUControl = 4'hc;
-         verify_results_64("arithmetic", expected_64bit_arightshifts);
+         verify_results_64("arithmetic right shift", expected_64bit_arightshifts);
          //le
          ALUControl = 4'hd;
          for (int i = 0; i < $size(a_64bit_tests); i++) begin
@@ -224,7 +243,7 @@ module tb_ALU;
          
          //32 bit tests
          is32Bit = 1;
-                  //addition
+         //addition
          ALUControl = 4'h0;
          verify_results_32("addition", expected_32bit_sums);
          //subtraction

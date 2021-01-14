@@ -68,12 +68,12 @@ int main () {
     //logic shift right
     printf(">> 32 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId32 ", ", (uint32_t) a_32bit_tests[i] >> b_32bit_tests[i]);
+        printf("%" PRId32 ", ", (int32_t)((uint32_t) a_32bit_tests[i] >> (uint32_t) b_32bit_tests[i]));
     }
     printf("}\n");
     printf(">> 64 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId64 ", ", (uint64_t) a_64bit_tests[i] >> b_64bit_tests[i]);
+        printf("%" PRId64 ", ", (int64_t)((uint64_t) a_64bit_tests[i] >> (uint64_t) b_64bit_tests[i]));
     }
     printf("}\n");
 
@@ -93,14 +93,14 @@ int main () {
     OPERATOR_TEST(^);
 
     //arithmetic shift right
-    printf(">> 32 BIT: {");
+    printf(">>> 32 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId32 ", ", a_32bit_tests[i] >> b_32bit_tests[i]);
+        printf("%" PRId32 ", ", a_32bit_tests[i] >> (uint32_t) b_32bit_tests[i]);
     }
     printf("}\n");
-    printf(">> 64 BIT: {");
+    printf(">>> 64 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId64 ", ", a_64bit_tests[i] >> b_64bit_tests[i]);
+        printf("%" PRId64 ", ", a_64bit_tests[i] >> (uint64_t) b_64bit_tests[i]);
     }
     printf("}\n");
 
