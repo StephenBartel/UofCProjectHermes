@@ -29,7 +29,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="64"/>
+    <Option Name="WTXSimLaunchSim" Val="67"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -774,6 +774,7 @@
       </Config>
     </FileSet>
     <FileSet Name="ALU" Type="SimulationSrcs" RelSrcDir="$PSRCDIR/ALU">
+      <Filter Type="Srcs"/>
       <File Path="$PSRCDIR/sim_1/new/tb_ALU.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
