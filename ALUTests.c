@@ -3,29 +3,25 @@
 #include <inttypes.h>
 
 #ifdef __APPLE__
-    #include <libkern/OSByteOrder.h>
+#include <libkern/OSByteOrder.h>
 
-    #define htobe16(x) OSSwapHostToBigInt16(x)
-    #define htole16(x) OSSwapHostToLittleInt16(x)
-    #define be16toh(x) OSSwapBigToHostInt16(x)
-    #define le16toh(x) OSSwapLittleToHostInt16(x)
-    #define htobe32(x) OSSwapHostToBigInt32(x)
-    #define htole32(x) OSSwapHostToLittleInt32(x)
-    #define be32toh(x) OSSwapBigToHostInt32(x)
-    #define le32toh(x) OSSwapLittleToHostInt32(x)
-    #define htobe64(x) OSSwapHostToBigInt64(x)
-    #define htole64(x) OSSwapHostToLittleInt64(x)
-    #define be64toh(x) OSSwapBigToHostInt64(x)
-    #define le64toh(x) OSSwapLittleToHostInt64(x)
+#define htobe16(x) OSSwapHostToBigInt16(x)
+#define htole16(x) OSSwapHostToLittleInt16(x)
+#define htobe32(x) OSSwapHostToBigInt32(x)
+#define htole32(x) OSSwapHostToLittleInt32(x)
+#define htobe64(x) OSSwapHostToBigInt64(x)
+#define htole64(x) OSSwapHostToLittleInt64(x)
 #else
-    #include <endian.h>
+#include <endian.h>
 #endif
 
 int64_t const a_64bit_tests[7] = {15, 0, -1, INT64_MIN, INT64_MAX, INT64_MIN, INT64_MAX};
 int64_t const b_64bit_tests[7] = {-3, 9, -18, INT64_MIN, INT64_MIN, INT64_MAX, INT64_MAX};
+uint64_t const b_64bit_shift_test[7] = {0, 1, 5, 32, 50, 63, 65};
 
 int32_t const a_32bit_tests[7] = {15, 0, -1, INT32_MIN, INT32_MAX, INT32_MIN, INT32_MAX};
 int32_t const b_32bit_tests[7] = {-3, 9, -18, INT32_MIN, INT32_MIN, INT32_MAX, INT32_MAX};
+uint32_t const b_32bit_shift_test[7] = {0, 1, 5, 32, 50, 63, 65};
 
 
 #define OPERATOR_TEST(OP) \
@@ -63,17 +59,26 @@ int main () {
     OPERATOR_TEST(&);
 
     //Logical left shift
-    OPERATOR_TEST(<<);
+    printf("<< 32 BIT: {");
+    for (int i = 0; i < 7; i++) {
+        printf("%" PRId32 ", ", (int32_t)((uint32_t) a_32bit_tests[i] << (uint32_t) b_32bit_shift_test[i]));
+    }
+    printf("}\n");
+    printf("<< 64 BIT: {");
+    for (int i = 0; i < 7; i++) {
+        printf("%" PRId64 ", ", (int64_t)((uint64_t) a_64bit_tests[i] << (uint64_t) b_64bit_shift_test[i]));
+    }
+    printf("}\n");
 
     //logic shift right
     printf(">> 32 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId32 ", ", (uint32_t) a_32bit_tests[i] >> b_32bit_tests[i]);
+        printf("%" PRId32 ", ", (int32_t)((uint32_t) a_32bit_tests[i] >> (uint32_t) b_32bit_shift_test[i]));
     }
     printf("}\n");
     printf(">> 64 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId64 ", ", (uint64_t) a_64bit_tests[i] >> b_64bit_tests[i]);
+        printf("%" PRId64 ", ", (int64_t)((uint64_t) a_64bit_tests[i] >> (uint64_t) b_64bit_shift_test[i]));
     }
     printf("}\n");
 
@@ -93,14 +98,14 @@ int main () {
     OPERATOR_TEST(^);
 
     //arithmetic shift right
-    printf(">> 32 BIT: {");
+    printf(">>> 32 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId32 ", ", a_32bit_tests[i] >> b_32bit_tests[i]);
+        printf("%" PRId32 ", ", a_32bit_tests[i] >> (uint32_t) b_32bit_shift_test[i]);
     }
     printf("}\n");
-    printf(">> 64 BIT: {");
+    printf(">>> 64 BIT: {");
     for (int i = 0; i < 7; i++) {
-        printf("%" PRId64 ", ", a_64bit_tests[i] >> b_64bit_tests[i]);
+        printf("%" PRId64 ", ", a_64bit_tests[i] >> (uint64_t) b_64bit_shift_test[i]);
     }
     printf("}\n");
 
@@ -140,5 +145,5 @@ int main () {
     }
     printf("}\n");
 
- return 1;
+    return 1;
 }
