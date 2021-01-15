@@ -42,6 +42,7 @@ module CPU(
         wire[3:0]src = instruction[15:12];
         wire[3:0] dst = instruction[11:8];
         wire[7:0] opcode = instruction[7:0];
+   assign sizeSelect = opcode[4:3];
    wire [63:0] nextInstruction; // input to the PC
    wire [63:0] offsetAddress; //current instruction + jump offset
    wire [63:0] instructionNumber; //current instruction
@@ -98,10 +99,10 @@ module CPU(
    assign nextInstruction = (PCSrc == 1'b1) ? offsetAddress : instructionNumber + 1;
     
     //Jump comparator
-   jump_comparator jComparator(.a(operandA), .b(operandB), .op(comparatorControl), .jump(PCSrc));
+   //jump_comparator jComparator(.a(operandA), .b(operandB), .op(comparatorControl), .jump(PCSrc));
    
    //Immediate extentsion
-   ThirtyTwoBitSignExtend(.a(imm), .b(immExtended));
+   ThirtyTwoBitSignExtend ThirtyTwoBitSignExtend(.a(imm), .b(immExtended));
    
    register_file rFile(.clk(clk), .dst(dst), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite));
    
