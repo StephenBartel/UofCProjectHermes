@@ -26,7 +26,7 @@ if __name__ == "__main__":
 	output_64_32 = list()
 	output_64_64 = list()
 
-	numSamples = 500000
+	numSamples = 500
 
 	for i in range(numSamples): 
 		rand_32 = random.getrandbits(32)
