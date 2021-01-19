@@ -1,2 +1,4 @@
-Vivado Simulator 2019.2
+Vivado Simulator 2020.1
 Time resolution is 1 ps
+Test failed for opcode h62
+$stop called at time : 1960 ns : File "C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_controlUnit.v" Line 1961
