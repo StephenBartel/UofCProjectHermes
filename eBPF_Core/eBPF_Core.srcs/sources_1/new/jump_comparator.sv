@@ -19,33 +19,32 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "jump_opcode.svh"
 
-
-module jump_comparator(
+module  jump_comparator(
     input [63:0] a,
     input [63:0] b,
-    input jumpOp_e op,
+    input [3:0] op,
     output reg jump
     );
     
-    always_comb @(a, b, op) begin
-        case(op)
-            JA  : jump = '1;
-            JEQ : jump = a == b;
-            JGT : jump = a > b;
-            JGE : jump = a >= b;
-            JSET: jump = & a & b;
-            JNE : jump = a != b;
-            JSGT: jump = $signed(a) > $signed(b);
-            JSGE: jump = $signed(a) >= $signed(b);
-            JLT : jump = a < b;
-            JLE : jump = a <= b; // Why is this the lte operator??
-            JSLT: jump = $signed(a) < $signed(b);
-            JSLE: jump = $signed(a) <= $signed(b);
-            default: jump = '0;
+    always @(a, b, op) begin
+        case(op) inside
+            4'h0: jump = '1;
+            4'h1: jump = a == b;
+            4'h2: jump = a > b;
+            4'h3: jump = a >= b;
+            4'h4: jump = | (a & b);
+            4'h5: jump = a != b;
+            4'h6: jump = $signed(a) > $signed(b);
+            4'h7: jump = $signed(a) >= $signed(b);
+            //
+            //
+            4'ha: jump = a < b;
+            4'hb: jump = a <= b; // Why is this the lte operator??
+            4'hc: jump = $signed(a) < $signed(b);
+            4'hd: jump = $signed(a) <= $signed(b);
+            default: jump <= '0;
         endcase
     end
-
 
 endmodule
