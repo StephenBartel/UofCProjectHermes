@@ -1,10 +1,11 @@
-0.6
-2019.2
-Dec  5 2019
-04:51:02
-/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/glbl.v,1573089660,verilog,,,,glbl,,,,,,,,
-/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_Mult_32bit.sv,1606419339,systemVerilog,,,,tb_Mult_32bit,,,../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
-/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_incrementor.sv,1605046294,systemVerilog,,,,tb_incrementor,,,../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
-/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Mult_32bit.sv,1605654644,systemVerilog,,/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_Mult_32bit.sv,,Mult_32bit,,,../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
-/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/tb_ReplaceName.sv,1605202945,systemVerilog,,,,tb_ReplaceName,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
-/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/incrementor.sv,1605045147,systemVerilog,,/home/spencer/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_incrementor.sv,,incrementor,,,../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
+0.7
+2020.1
+May 27 2020
+20:09:33
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/ControlUnit.sv,1611009904,systemVerilog,,,,ControlUnit,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/glbl.v,1610398599,verilog,,,,glbl,,,,,,,,
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_controlUnit.v,1611015500,verilog,,,,tb_controlUnit,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_leftZeroPad.v,1610679777,verilog,,,,tb_leftZeroPad,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_rightZeroPad.v,1610679604,verilog,,,,tb_rightZeroPad,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ThirtyTwoBitLeftPad.v,1610507190,verilog,,C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_controlUnit.v,,ThirtyTwoBitLeftPad,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
+C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ThirtyTwoBitRightPad.v,1610507304,verilog,,C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_rightZeroPad.v,,ThirtyTwoBitRightPad,,,../../../../eBPF_Core.srcs/sim_1/new;../../../../eBPF_Core.srcs/sources_1/imports/UofCProjectHermes,,,,,
