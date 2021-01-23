@@ -19,6 +19,10 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
+`include "exception.svh"
+
+import ALU_exception::*;
+import global_exception::*;
 
 module ALU(
     input [3:0] ALUControl,
@@ -26,7 +30,7 @@ module ALU(
     input [63:0] operandA,
     input [63:0] operandB,
     output reg [63:0] ALUResult,
-    output [3:0] arithmeticExc
+    output [1:0] arithmeticExc
     );
     wire [31:0] out32;
     wire [3:0] exception32;
@@ -45,7 +49,7 @@ module ALU32(
     input [31:0] A,
     input [31:0] B,
     output reg [31:0] ALUResult,
-    output [3:0] arithmeticExc
+    output [1:0] arithmeticExc
     );
     wire [31:0] add_result;
     Hardware_Adder_32bit adder_(A, B, add_result);
@@ -120,6 +124,21 @@ module ALU32(
       default: ; // Exception
     endcase
     end
+    
+    // handle exceptions
+    reg [1:0] exc;
+    assign arithmeticExc = exc;
+    always@(*) begin
+        if (ALUControl == 4'h3 || ALUControl == 4'h9) begin // division and modulus
+            if (B == 0) exc = DIVISION_BY_ZERO;
+        end else if (ALUControl == 4'h6 || ALUControl == 4'h7 || ALUControl == 4'hc) begin //shifts
+            if (B < 0 || B > 64) exc = INVALID_SHIFT_IMM;
+        end else if (ALUControl == 4'hd || ALUControl == 4'he) begin // byteswaps
+            if (B != 16 && B != 32) exc = INVALID_ENDIAN_IMM;
+        end else begin
+            exc = NO_EXCEPTION;
+        end
+    end
 
 endmodule
 
@@ -128,7 +147,7 @@ module ALU64(
     input [63:0] A,
     input [63:0] B,
     output reg [63:0] ALUResult,
-    output [3:0] arithmeticExc
+    output [1:0] arithmeticExc
     );
     
     wire [63:0] add_result;
@@ -203,5 +222,20 @@ module ALU64(
            ALUResult = byteswap_result; // Byteswap 
       default: ; // Exception
     endcase
+    end
+    
+    // handle exceptions
+    reg [1:0] exc;
+    assign arithmeticExc = exc;
+    always@(*) begin
+        if (ALUControl == 4'h3 || ALUControl == 4'h9) begin // division and modulus
+            if (B == 0) exc = DIVISION_BY_ZERO;
+        end else if (ALUControl == 4'h6 || ALUControl == 4'h7 || ALUControl == 4'hc) begin //shifts
+            if (B < 0 || B > 64) exc = INVALID_SHIFT_IMM;
+        end else if (ALUControl == 4'hd || ALUControl == 4'he) begin // byteswaps
+            if (B != 16 && B != 32 && B != 64) exc = INVALID_ENDIAN_IMM;
+        end else begin
+            exc = NO_EXCEPTION;
+        end
     end
 endmodule

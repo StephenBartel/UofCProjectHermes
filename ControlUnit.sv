@@ -27,6 +27,8 @@ module ControlUnit(
     output reg memwrite,
     output reg memread, 
     output reg writesrc,
+    output reg dstSelect,
+    output reg [1:0] immExtend,
     output reg [3:0] Branch,
     output reg [3:0] alucontrol,
     output reg [1:0] alusrca,
@@ -39,6 +41,22 @@ module ControlUnit(
         
         case(opcode)
         
+            8'h00: //Good
+                begin
+                    regwrite    <= 1'b1;
+                    memtoreg    <= 1'b1;
+                    memwrite    <= 1'b0;
+                    memread     <= 1'b1; 
+                    writesrc    <= 1'b1;
+                    dstSelect   <= 1'b1;
+                    immExtend   <= 2'b10;
+                    Branch      <= 4'b0000;
+                    alucontrol  <= 4'b0100;
+                    alusrca     <= 2'b00;
+                    alusrcb     <= 2'b00;
+                    bit_32      <= 1'b0;
+                end
+            
             8'h07: //Good
                 begin 
                     regwrite    <= 1'b1;
@@ -46,6 +64,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -59,6 +79,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -72,6 +94,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0001;
                     alusrca     <= 2'b00;
@@ -85,6 +109,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0001;
                     alusrca     <= 2'b00;
@@ -98,6 +124,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0010;
                     alusrca     <= 2'b00;
@@ -111,6 +139,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0010;
                     alusrca     <= 2'b00;
@@ -124,6 +154,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0011;
                     alusrca     <= 2'b00;
@@ -137,6 +169,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0011;
                     alusrca     <= 2'b00;
@@ -150,6 +184,8 @@ module ControlUnit(
                     memwrite    <= 1'b0; 
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0100;
                     alusrca     <= 2'b00; 
@@ -163,6 +199,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0100;
                     alusrca     <= 2'b00; 
@@ -176,6 +214,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0101;
                     alusrca     <= 2'b00; 
@@ -189,6 +229,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0101;
                     alusrca     <= 2'b00; 
@@ -202,6 +244,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0110;
                     alusrca     <= 2'b00; 
@@ -215,6 +259,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0110;
                     alusrca     <= 2'b00; 
@@ -228,6 +274,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0111;
                     alusrca     <= 2'b00; 
@@ -241,6 +289,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0111;
                     alusrca     <= 2'b00; 
@@ -254,6 +304,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1000;
                     alusrca     <= 2'b00; 
@@ -267,6 +319,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1001;
                     alusrca     <= 2'b00; 
@@ -280,6 +334,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1001;
                     alusrca     <= 2'b00; 
@@ -293,6 +349,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1010;
                     alusrca     <= 2'b00; 
@@ -306,6 +364,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1010;
                     alusrca     <= 2'b00; 
@@ -319,6 +379,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1011;
                     alusrca     <= 2'b00; 
@@ -332,6 +394,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1011;
                     alusrca     <= 2'b00; 
@@ -345,6 +409,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;  
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1100;
                     alusrca     <= 2'b00; 
@@ -358,6 +424,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1100;
                     alusrca     <= 2'b00; 
@@ -371,6 +439,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -384,6 +454,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -397,6 +469,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0001;
                     alusrca     <= 2'b00; 
@@ -410,9 +484,11 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0001;
-                    alusrca     <= 1'b01; 
+                    alusrca     <= 1'b00; 
                     alusrcb     <= 2'b01; 
                     bit_32      <= 1'b1;                              
                 end            
@@ -423,6 +499,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0010;
                     alusrca     <= 2'b00; 
@@ -436,6 +514,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0010;
                     alusrca     <= 2'b00; 
@@ -449,6 +529,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0011;
                     alusrca     <= 2'b00; 
@@ -462,6 +544,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0011;
                     alusrca     <= 2'b00; 
@@ -475,6 +559,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0100;
                     alusrca     <= 2'b00; 
@@ -488,6 +574,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0100;
                     alusrca     <= 2'b00; 
@@ -501,6 +589,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0101;
                     alusrca     <= 2'b00; 
@@ -514,6 +604,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0101;
                     alusrca     <= 2'b00; 
@@ -527,6 +619,8 @@ module ControlUnit(
                     memwrite    <= 1'b0; 
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0110;
                     alusrca     <= 2'b00; 
@@ -540,6 +634,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0110;
                     alusrca     <= 2'b00; 
@@ -553,6 +649,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0111;
                     alusrca     <= 2'b00; 
@@ -566,6 +664,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0111;
                     alusrca     <= 2'b00; 
@@ -579,6 +679,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1000;
                     alusrca     <= 2'b00; 
@@ -592,6 +694,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1001;
                     alusrca     <= 2'b00; 
@@ -605,6 +709,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1001;
                     alusrca     <= 2'b00; 
@@ -618,6 +724,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1010;
                     alusrca     <= 2'b00; 
@@ -631,6 +739,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;  
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1010;
                     alusrca     <= 2'b00; 
@@ -644,6 +754,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1011;
                     alusrca     <= 2'b00; 
@@ -657,6 +769,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1011;
                     alusrca     <= 2'b00; 
@@ -669,6 +783,8 @@ module ControlUnit(
                     memtoreg    <= 1'b0; 
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1100;
                     alusrca     <= 2'b00; 
@@ -682,6 +798,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1100;
                     alusrca     <= 2'b00; 
@@ -695,6 +813,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1101;
                     alusrca     <= 2'b01; 
@@ -708,6 +828,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b1110;
                     alusrca     <= 2'b01; 
@@ -721,6 +843,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b01;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -734,6 +858,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -747,6 +873,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -760,6 +888,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -773,6 +903,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -786,6 +918,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -799,6 +933,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -812,6 +948,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -825,6 +963,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -838,6 +978,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -851,6 +993,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -864,6 +1008,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -877,6 +1023,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b1; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -890,10 +1038,12 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b1; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
-                    alusrca     <= 2'b00; 
-                    alusrcb     <= 2'b10;
+                    alusrca     <= 2'b10; 
+                    alusrcb     <= 2'b00;
                     bit_32      <= 1'b0;                            
                 end            
             8'h6a: //Good
@@ -903,6 +1053,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b1; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -916,6 +1068,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b1; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -929,6 +1083,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b1; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -942,6 +1098,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -955,6 +1113,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -968,6 +1128,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -981,6 +1143,8 @@ module ControlUnit(
                     memwrite    <= 1'b1;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b10;
@@ -994,6 +1158,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0001;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -1007,6 +1173,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0010;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1020,6 +1188,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0010;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1033,6 +1203,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0011;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1046,6 +1218,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0011;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1059,6 +1233,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0100;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1072,6 +1248,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0100;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1085,6 +1263,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0101;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1098,6 +1278,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0101;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1111,6 +1293,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0110;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1124,6 +1308,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0110;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1137,6 +1323,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0111;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1150,6 +1338,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0111;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1163,6 +1353,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1176,6 +1368,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1000;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00; 
@@ -1189,6 +1383,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1001;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1202,6 +1398,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1001;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1215,6 +1413,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1010;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1228,6 +1428,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1010;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1241,6 +1443,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1011;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1254,6 +1458,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1011;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1267,6 +1473,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0;
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1100;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1280,6 +1488,8 @@ module ControlUnit(
                     memwrite    <= 1'b0;
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0;
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b1100;
                     alucontrol  <= 4'b0000;
                     alusrca     <= 2'b00;
@@ -1293,6 +1503,8 @@ module ControlUnit(
                     memwrite    <= 1'b0; 
                     memread     <= 1'b0; 
                     writesrc    <= 1'b0; 
+                    dstSelect   <= 1'b0;
+                    immExtend   <= 2'b00;
                     Branch      <= 4'b0000; 
                     alucontrol  <= 4'b0000; 
                     alusrca     <= 2'b00;
