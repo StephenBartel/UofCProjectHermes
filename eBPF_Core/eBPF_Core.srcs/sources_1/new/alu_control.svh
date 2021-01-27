@@ -1,6 +1,7 @@
 //`include "alu_opcode"
+package alu_opcode;
 
-typedef enum [3:0] {
+logic [3:0]
 	ADD = 4'h0,
 	SUB = 4'h1,
 	MUL = 4'h2,
@@ -15,10 +16,6 @@ typedef enum [3:0] {
 	MOV = 4'hb,
 	ARSH = 4'hc,
 	LE = 4'hd,
-	BE = 4'he
-} op_e;
+	BE = 4'he;
 
-typedef struct packed {
-    op_e op;
-    logic bits32;
-} ALUcontrol_s;
+endpackage;

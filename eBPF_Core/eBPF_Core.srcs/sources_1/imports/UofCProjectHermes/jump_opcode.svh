@@ -1,7 +1,10 @@
 `ifndef JUMP_OPCODE_SVH
 `define JUMP_OPCODE_SVH
 
-typedef enum [3:0] {
+package jump_opcode;
+
+const logic [3:0]
+    NO_JUMP = 4'hf,
 	JA   = 4'h0,
 	JEQ  = 4'h1,
 	JGT  = 4'h2,
@@ -15,12 +18,8 @@ typedef enum [3:0] {
 	JLT  = 4'ha,
 	JLE  = 4'hb,
 	JSLT = 4'hc,
-	JSLE = 4'hd
-} jumpOp_e;
+	JSLE = 4'hd;
 
-typedef struct packed {
-	jumpOp_e op;
-	logic imm_or_reg;
-} jumpOpcodeBody_s;
+endpackage
 
 `endif
