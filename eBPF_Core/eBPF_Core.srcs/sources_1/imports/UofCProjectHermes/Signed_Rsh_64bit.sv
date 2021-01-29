@@ -21,9 +21,9 @@
 
 
 module Signed_Rsh_64bit(
-    input [63:0] a,
-    input [63:0] b,
-    output [63:0] c
+    input longint a,
+    input longint b,
+    output longint c
     );
     
     assign c = a>>>b;
