@@ -1,4 +1,0 @@
-INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/jared/Documents/GitHub/UofCProjectHermes/ControlUnit.sv" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module ControlUnit
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/jared/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_controlUnit.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module tb_controlUnit

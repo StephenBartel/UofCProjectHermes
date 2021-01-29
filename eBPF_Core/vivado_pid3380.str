@@ -1,0 +1,125 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:49 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 3380
+License: Customer
+
+Current time: 	Thu Jan 28 21:05:10 MST 2021
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Vivado/Vivado/2020.1/tps/win64/jre9.0.4
+Java executable location: 	D:/Vivado/Vivado/2020.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	andre
+User home directory: C:/Users/andre
+User working directory: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core
+User country: 	CA
+User language: 	en
+User locale: 	en_CA
+
+RDI_BASEROOT: D:/Vivado/Vivado
+HDI_APPROOT: D:/Vivado/Vivado/2020.1
+RDI_DATADIR: D:/Vivado/Vivado/2020.1/data
+RDI_BINDIR: D:/Vivado/Vivado/2020.1/bin
+
+Vivado preferences file location: C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/
+Vivado layouts directory: C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	D:/Vivado/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.log
+Vivado journal file location: 	C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.jou
+Engine tmp dir: 	C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/.Xil/Vivado-3380-DESKTOP-TU0BN25
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Vivado/Vivado/2020.1/ids_lite/ISE
+XILINX_DSP: D:/Vivado/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Vivado/Vivado/2020.1
+XILINX_VIVADO: D:/Vivado/Vivado/2020.1
+XILINX_VIVADO_HLS: D:/Vivado/Vivado/2020.1
+
+
+GUI allocated memory:	194 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,014 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// WARNING: HEventQueue.dispatchEvent() is taking  1036 ms.
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr. Version: Vivado v2020.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,014 MB. GUI used memory: 51 MB. Current time: 1/28/21, 9:05:11 PM MST
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 110 MB (+112503kb) [00:00:21]
+// [Engine Memory]: 1,014 MB (+912185kb) [00:00:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  3704 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'. 
+// Project name: eBPF_Core; location: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core; part: xc7k70tfbv676-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:14 . Memory (MB): peak = 1024.965 ; gain = 0.000 
+dismissDialog("Open Project"); // bz (cs)
+// WARNING: HEventQueue.dispatchEvent() is taking  1521 ms.
+// Tcl Message: update_compile_order -fileset sources_1 
+// [GUI Memory]: 125 MB (+10593kb) [00:00:49]
+// Elapsed time: 92 seconds
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, CPU (CPU.sv)]", 4); // B (F, cs)
+// PAPropertyPanels.initPanels (jump_comparator.sv) elapsed time: 0.2s
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, CPU (CPU.sv), jComparator : jump_comparator (jump_comparator.sv)]", 8, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, CPU (CPU.sv), jComparator : jump_comparator (jump_comparator.sv)]", 8, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, CPU (CPU.sv), jComparator : jump_comparator (jump_comparator.sv)]", 8, false, false, false, false, false, true); // B (F, cs) - Double Click
+// [GUI Memory]: 134 MB (+2719kb) [00:02:02]
+selectCodeEditor("jump_comparator.sv", 99, 367); // bP (w, cs)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, CPU (CPU.sv), rFile : register_file (register_file.sv)]", 13, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, CPU (CPU.sv), rFile : register_file (register_file.sv)]", 13, false, false, false, false, false, true); // B (F, cs) - Double Click
+// Elapsed time: 25 seconds
+selectCodeEditor("register_file.sv", 83, 61); // bP (w, cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "jump_comparator.sv", 1); // m (l, cs)
+selectCodeEditor("jump_comparator.sv", 115, 112); // bP (w, cs)
+// Elapsed time: 42 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "register_file.sv", 2); // m (l, cs)

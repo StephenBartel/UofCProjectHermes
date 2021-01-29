@@ -29,7 +29,7 @@ module PC(
     
     always @(posedge clk)
     begin
-        outputInstruction = inputInstruction ;
+        outputInstruction <= inputInstruction;
     end
     
     

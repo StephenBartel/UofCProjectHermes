@@ -5433,3 +5433,24 @@ selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, 
 // TclEventType: WAVEFORM_UPDATE_WAVEFORM
 // TclEventType: DG_GRAPH_STALE
 // TclEventType: FILE_SET_CHANGE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// TclEventType: SIMULATION_UPDATE_SCOPE_TREE
+// TclEventType: SIMULATION_UPDATE_STACKS
+// TclEventType: SIMULATION_UPDATE_OBJECT_TREE
+// TclEventType: SIMULATION_UPDATE_PROTOCOL_INSTANCE_TREE
+// TclEventType: WAVEFORM_UPDATE_WAVEFORM
+// Elapsed time: 604 seconds
+selectCodeEditor("CPU_tb.sv", 95, 247); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 111, 248); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 154, 247); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 198, 247); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 74, 239); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 168, 260); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 192, 248); // bP (w, cs)
+selectCodeEditor("CPU_tb.sv", 194, 248); // bP (w, cs)
+selectButton(PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH, "simulation_relaunch"); // E (g, cs)
+// Run Command: PAResourceCommand.PACommandNames_SIMULATION_RELAUNCH
+// b (cs):  Relaunch Simulation : addNotify
+// TclEventType: SIMULATION_MODEL_ABOUT_TO_CLOSE
+// Tcl Message: relaunch_sim 

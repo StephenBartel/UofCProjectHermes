@@ -30,9 +30,11 @@ module register_file(
     input writeEnable
     );
     
+
+    
     typedef logic [63:0] register;
     
-    register [16:0] gprs;
+    register [16:0] gprs = 0;
     logic [3:0] last_dst;
     
     // read step    

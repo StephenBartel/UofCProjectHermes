@@ -25,7 +25,7 @@ module CPU(
     input [63:0] dataFromMem,
     input [63:0] firstInstructionAddress,
     input reset,
-    output clk,
+    input clk,
     output memWrite, 
     output memRead,
     output [1:0] sizeSelect,
@@ -34,7 +34,7 @@ module CPU(
     output [63:0] addressForInstruction
     );
     
-   wire clk; 
+   //wire clk = clk; 
    assign instruction = instructionFromMem;
    wire [63:0] instruction;
         wire [31:0] imm = instruction[63:32];
@@ -55,7 +55,11 @@ module CPU(
    assign addressForData = ALUResult;
    wire [63:0] dstWrite;
    wire [63:0] srcRead;
+   wire [63:0] dstRead;
    wire [63:0] immExtended;
+   wire [63:0] immSignExtended;
+   wire [63:0] immLeftPad;
+   wire [63:0] immRightPad;
    wire PCSrc;
    wire [63:0] writeData;
    assign writeData = writeData;
@@ -87,6 +91,7 @@ module CPU(
    wire[1:0] ALUSrcB;
    wire ALUBitSelect;
    wire PCContinue;
+   wire [1:0] immExtend;
    
    //PC portion of diagram
    assign nextOrFirstInstruction = (reset == 1'b1) ? firstInstructionAddress : nextInstruction;  
@@ -95,20 +100,25 @@ module CPU(
    //Instruction incrementation
    SixteenBitSignExtend offsetExtender(.a(offset), .b(offsetExtended));
    assign addressForInstruction = instructionNumber << 3;
-   Hardware_Adder_64bit offsetAdder(.a(instructionNumber), .b(offsetExtended), .c(offsetAddress));
+   Hardware_Adder_64bit offsetAdder(.a(instructionNumber + 1), .b(offsetExtended), .c(offsetAddress));
    assign nextInstruction = (PCSrc == 1'b1) ? offsetAddress : instructionNumber + 1;
     
     //Jump comparator
-   //jump_comparator jComparator(.a(operandA), .b(operandB), .op(comparatorControl), .jump(PCSrc));
+   jump_comparator jComparator(.a(operandA), .b(operandB), .op(comparatorControl), .jump(PCSrc));
    
    //Immediate extentsion
-   ThirtyTwoBitSignExtend ThirtyTwoBitSignExtend(.a(imm), .b(immExtended));
+   ThirtyTwoBitSignExtend ThirtyTwoBitSignExtend(.a(imm), .b(immSignExtended));
+   
+   ThirtyTwoBitLeftPad ThirtyTwoBitLeftPad( .a(imm), .out(immLeftPad));
+   ThirtyTwoBitRightPad ThirtyTwoBitRightPad( .a(imm), .out(immRightPad));
+   ThreeToOneMux ImmMux(.a(immSignExtended), .b(immLeftPad), .c(immRightPad), .out(immExtended), .selector(immExtend));
+   
    
    register_file rFile(.clk(clk), .dst(dst), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite));
    
    //Mux ouputs to ALU
-   ThreeToOneMux MuxA (.a(srcRead), .b(immExtended), .c(offsetExtended), .out(operandA), .selector(ALUSrcA));
-   ThreeToOneMux MuxB (.a(dstRead), .b(immExtended), .c(offsetExtended), .out(operandB), .selector(ALUSrcB));
+   ThreeToOneMux MuxA (.a(dstRead), .b(immExtended), .c(offsetExtended), .out(operandA), .selector(ALUSrcA));//May need to swap the selector A/B
+   ThreeToOneMux MuxB (.a(srcRead), .b(immExtended), .c(offsetExtended), .out(operandB), .selector(ALUSrcB));
    
    ALU ALU(.ALUControl(ALUControl), .is32Bit(ALUBitSelect), .operandA(operandA), .operandB(operandB), .ALUResult(ALUResult), .arithmeticExc(arithmeticExc));
   
@@ -118,6 +128,6 @@ module CPU(
   
   
    ControlUnit controlUnit(.opcode(opcode), .regwrite(regWrite), .memtoreg(memToReg), .memwrite(memWrite), .memread(memRead), .writesrc(writeSrc),
-    .Branch(comparatorControl), .alucontrol(ALUControl), .alusrca(ALUSrcA), .alusrcb(ALUSrcB), .bit_32(ALUBitSelect));
+    .Branch(comparatorControl), .alucontrol(ALUControl), .alusrca(ALUSrcA), .alusrcb(ALUSrcB), .bit_32(ALUBitSelect), .immExtend(immExtend));
    
 endmodule

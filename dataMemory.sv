@@ -19,7 +19,8 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-`include "memory_opcode.svh"
+//`include "memory_opcode.svh";
+`include "CPU_tb.sv";
 module dataMemory(
     input clk,
     input memWrite, // 1 for writing to memory, 0 is for not. Will always output reads, up to the Mux to select. 
@@ -27,7 +28,9 @@ module dataMemory(
     input [1:0] sizeSelect, // 00 = word (4 bytes), 01 = half word (2 bytes), 10 = byte (1 byte), 11 = double word (8 bytes)
     input [63:0] writeData,
     output reg [63:0] readData,
-    input [63:0] address
+    input [63:0] address,
+    input data_read,
+    input string file_name
     );
     
     parameter numData = 11;
@@ -36,10 +39,10 @@ module dataMemory(
     reg[7:0] byteMemory[numData*8 - 1:0];
     reg [63:0] offset;
     
-    initial
+    always @( data_read)
         begin 
-        
-        $readmemh("dMemTest.txt", initMemory);
+        string file_name_new = {file_name,".mem"};
+        $readmemh(file_name_new, initMemory);
         
         for (int i = 0; i < numData; i++)
         begin    
@@ -66,14 +69,14 @@ module dataMemory(
           begin
                
                byteMemory[offset] = writeData[7:0];
-               if(sizeSelect != B)
+               if(sizeSelect != 2'h2)
                begin
                     byteMemory[offset + 1] = writeData[15:8];
-                    if(sizeSelect != H)
+                    if(sizeSelect != 2'h1)
                     begin
                         byteMemory[offset + 2] = writeData[23:16];
                         byteMemory[offset + 3] = writeData[31:24];
-                        if(sizeSelect != W)
+                        if(sizeSelect != 2'h0)
                         begin
                             byteMemory[offset + 4] = writeData[39:32];
                             byteMemory[offset + 5] = writeData[47:40];
@@ -88,14 +91,14 @@ module dataMemory(
           begin
               readData = 0;
               readData[7:0] = byteMemory[offset]; 
-               if(sizeSelect != B)
+               if(sizeSelect != 2'h2)
                begin
                     readData[15:8] = byteMemory[offset + 1];
-                    if(sizeSelect != H)
+                    if(sizeSelect != 2'h1)
                     begin
                        readData[23:16] = byteMemory[offset + 2]; 
                        readData[31:24] = byteMemory[offset + 3]; 
-                        if(sizeSelect != W)
+                        if(sizeSelect != 2'h0)
                         begin
                              readData[39:32] = byteMemory[offset + 4]; 
                              readData[47:40] = byteMemory[offset + 5]; 

@@ -22,20 +22,24 @@
 
 module instructionMemory(
     input [63:0] instructionAddress,
-    output [63:0] instruction
+    output [63:0] instruction,
+    input read_instruct,
+    input string file_name
     );
     
     parameter NumInstructions = 15;
     parameter File = "instructions.txt";
     
     reg [63:0] mem [0 : NumInstructions - 1] ;
+    reg [63:0] instructionShifted;
     
-    initial 
+    always @ (posedge read_instruct)
     begin
-        $readmemh(File, mem);
+        string file_name_new = {file_name, ".bytes"};
+        $readmemh(file_name_new, mem);
     end
     
-    
-    assign instruction = ((instructionAddress) < NumInstructions)? mem[instructionAddress] : 64'd0;
+    assign instructionShifted = instructionAddress >>> 3;
+    assign instruction = ((instructionShifted) < NumInstructions)? mem[instructionShifted] : 64'd0;
     //assign instruction = mem[1];
 endmodule
