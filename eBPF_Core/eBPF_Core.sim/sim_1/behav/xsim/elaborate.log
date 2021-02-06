@@ -4,10 +4,8 @@ Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv:128]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
 WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
-WARNING: [VRFC 10-5021] port 'clk' is not connected on this instance [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv:136]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -19,6 +17,7 @@ Compiling package xil_defaultlib.opcode_class
 Compiling package xil_defaultlib.jump_opcode
 Compiling package xil_defaultlib.alu_opcode
 Compiling package xil_defaultlib.control_exception
+Compiling package xil_defaultlib.data_memory_exception
 Compiling module xil_defaultlib.PC
 Compiling module xil_defaultlib.SixteenBitSignExtend
 Compiling module xil_defaultlib.Hardware_Adder_64bit
@@ -58,6 +57,7 @@ Compiling module xil_defaultlib.byteswap64
 Compiling module xil_defaultlib.ALU64
 Compiling module xil_defaultlib.ALU
 Compiling module xil_defaultlib.LogicalControlUnit
+Compiling module xil_defaultlib.ExceptionHandler
 Compiling module xil_defaultlib.CPU
 Compiling module xil_defaultlib.instructionMemory
 Compiling module xil_defaultlib.dataMemory

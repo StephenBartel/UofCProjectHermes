@@ -26,12 +26,17 @@ module CPU(
     input [63:0] firstInstructionAddress,
     input reset,
     input clk,
+    input[1:0] dataMemoryExc,
+    input [1:0] instructionMemoryExc,
     output memWrite, 
     output memRead,
     output [1:0] sizeSelect,
     output [63:0] writeData,
     output [63:0] addressForData,
-    output [63:0] addressForInstruction
+    output [63:0] addressForInstruction,
+    output  [4:0] exception,
+    output  [63:0] badAddress,
+    output  [63:0] badInstruction
     );
     
    //wire clk = clk; 
@@ -72,12 +77,14 @@ module CPU(
    wire [3:0] dstChosen;
    
    //exception handler wires:
+   /*
    wire opcodeExc;
    wire excCaught;
    wire arithmeticExc;
    wire [63:0] errorData;
    wire instructionMemoryExc;
    wire dataMemoryExc;
+   */
    
    //Control unit signals
    wire writeSrc;
@@ -95,6 +102,13 @@ module CPU(
    wire PCContinue;
    wire [1:0] immExtend;
    //wire byteSwapSelect = instruction[33:32];
+   
+   //Exception handler implementation
+    wire [1:0] ALUExc;
+    wire [1:0] controlExc;
+    wire [1:0] registerExc;
+    wire  excCaught;
+   
    
    //PC portion of diagram
    assign nextOrFirstInstruction = (reset == 1'b1) ? firstInstructionAddress : nextInstruction;  
@@ -119,13 +133,13 @@ module CPU(
    DestReg DestReg (.dst(dst), .clk(clk), .dstDelayed(dstDelayed));
    assign dstChosen = (dstSelect == 1'b1) ? dstDelayed : dst ;
    
-   register_file rFile(.clk(clk), .reset(reset), .dst(dstChosen), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite));
+   register_file rFile(.clk(clk), .reset(reset), .dst(dstChosen), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite) ,.registerExc(registerExc));
    
    //Mux ouputs to ALU
    ThreeToOneMux MuxA (.a(immExtended), .b(dstRead), .c(offsetExtended), .out(operandA), .selector(ALUSrcA));//May need to swap the selector A/B
    ThreeToOneMux MuxB (.a(immExtended), .b(srcRead), .c(offsetExtended), .out(operandB), .selector(ALUSrcB)); //Changed out to match the new logic in control unit
    
-   ALU ALU(.ALUControl(ALUControl), .is32Bit(ALUBitSelect), .operandA(operandA), .operandB(operandB), .ALUResult(ALUResult), .arithmeticExc(arithmeticExc));
+   ALU ALU(.ALUControl(ALUControl), .is32Bit(ALUBitSelect), .operandA(operandA), .operandB(operandB), .ALUResult(ALUResult), .arithmeticExc(ALUExc));
   
    
    assign dstWrite = (memToReg == 1'b1) ? readData : ALUResult;
@@ -134,6 +148,11 @@ module CPU(
   
   
    LogicalControlUnit controlUnit(.opcode(opcode), .byteSwapSelect(instruction[33:32]), .regwrite(regWrite), .memtoreg(memToReg), .memwrite(memWrite), .memread(memRead), .writesrc(writeSrc), .dstSelect(dstSelect),
-    .Branch(comparatorControl), .alucontrol(ALUControl), .alusrca(ALUSrcA), .alusrcb(ALUSrcB), .bit_32(ALUBitSelect), .immExtend(immExtend));
+    .Branch(comparatorControl), .alucontrol(ALUControl), .alusrca(ALUSrcA), .alusrcb(ALUSrcB), .bit_32(ALUBitSelect), .immExtend(immExtend), .clk(clk), .excCaught(excCaught), .controlExc(controlExc));
+   
+   ExceptionHandler ExceptionHandler(.clk(clk), .ALUExc(ALUExc), .controlExc(controlExc), .dataMemoryExc(dataMemoryExc),
+   .instructionMemoryExc(instructionMemoryExc), .registerExc(registerExc) ,.instructionAddress(addressForInstruction) 
+   ,.instruction(instruction) ,.excCaught(excCaught) ,.exception(exception) ,.badAddress(badAddress) ,.badInstruction(badInstruction));
+   
    
 endmodule

@@ -195,3 +195,22 @@ relaunch_sim
 relaunch_sim
 relaunch_sim
 save_wave_config {C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/CPU_tb_behav.wcfg}
+add_files -norecurse C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ExceptionHandler.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim

@@ -45,7 +45,7 @@ module ExceptionHandler(
     
     assign excCaught = exception != NOTHING;
     
-    assign badAddress = !excCaught ? '0 : lastAddress;
+    assign badAddress = !excCaught ? '0 : instructionAddress;
     
     assign badInstruction = !excCaught ? '0 : instruction;
         
@@ -56,8 +56,9 @@ module ExceptionHandler(
                         : instructionMemoryExc != NO_EXCEPTION ? {INSTRUCTION_MEMORY_CLASS, instructionMemoryExc}
                         :                                         NOTHING;
     
+    /*
     always @(posedge(clk)) begin
         lastAddress <= instructionAddress;
     end
-                        
+    */                  
 endmodule

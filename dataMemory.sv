@@ -21,6 +21,8 @@
 
 //`include "memory_opcode.svh";
 `include "CPU_tb.sv";
+import data_memory_exception :: * ;
+import global_exception :: * ;
 module dataMemory(
     input clk,
     input memWrite, // 1 for writing to memory, 0 is for not. Will always output reads, up to the Mux to select. 
@@ -30,7 +32,8 @@ module dataMemory(
     output reg [63:0] readData,
     input [63:0] address,
     input data_read,
-    input string file_name
+    input string file_name,
+    output reg [1:0] dataMemoryExc
     );
     
     parameter numData = 90;
@@ -109,5 +112,21 @@ module dataMemory(
                     end
                end
             end
+    end
+    
+    always @(memWrite, memRead, address)
+    begin
+        
+        if(memWrite == 1'b1 && address >= numData || address < 0 )
+        begin
+               assign dataMemoryExc = OUT_OF_BOUNDS_STORE ;
+        end
+        else if(memRead == 1'b1 && address >= numData || address < 0 )
+        begin
+               assign dataMemoryExc = OUT_OF_BOUNDS_READ ;
+        end
+        else
+            assign dataMemoryExc = NO_EXCEPTION;
+        
     end
 endmodule

@@ -67,12 +67,13 @@ module LogicalControlUnit(
     logic next_in_lddw = 0, in_lddw = 0;
     wire start_lddw = opcode == LDDW_1;
     wire end_lddw = opcode == LDDW_2;
+    
     always @(posedge(clk)) begin
-        in_lddw = next_in_lddw;
         if (start_lddw) begin // lddw first half
-            next_in_lddw = 1;
-        end else if (end_lddw && in_lddw) begin
-            next_in_lddw = 0;
+            in_lddw = 1;
+        end 
+        else if ((end_lddw && in_lddw) || opcode == EXIT ) begin
+            in_lddw = 0;
         end
     end
     
@@ -156,12 +157,12 @@ module LogicalControlUnit(
         endcase
     end
 
-    assign controlExc = opcode == EXIT ?
-                control_exception::EXIT :
-            in_lddw && opcode != LDDW_2 ?
+    assign controlExc = in_lddw && opcode != LDDW_2 ?
                 control_exception::INCOMPLETE_LDDW :
-            bad_opcode ?
+                 opcode == EXIT ?
+                control_exception::EXIT :
+                bad_opcode ?
                 control_exception::UNKNOWN_OPCODE :
-                global_exception::NO_EXCEPTION;
+                global_exception::NO_EXCEPTION ;
     
 endmodule
