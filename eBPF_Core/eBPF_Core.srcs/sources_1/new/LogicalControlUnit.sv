@@ -28,6 +28,7 @@
 
 module LogicalControlUnit(
     input [7:0] opcode,
+    input [1:0] byteSwapSelect,
     output reg regwrite,
     output reg memtoreg,
     output reg memwrite,
@@ -83,15 +84,16 @@ module LogicalControlUnit(
     assign mode = opcode[7:5];
     
     
-    assign regwrite = (opClass == opcode_class::JMP) || alu ? immOrReg && !byteswap : load;
+    assign regwrite = alu || byteswap || load;
     // We want to write to reg in two cases:                               
-    // 1. in a jump or ALU instruction (except byteswap) when immOrReg is 1
-    // 2. in a load instruction                                            
+    // 1. in any ALU result as well as byteswap
+    // 2. in a load instruction 
+    // In no other case will we be doing a reg write                                           
     
-    assign memtoreg = load;
+    assign memtoreg = (opClass == opcode_class::LDX);
     assign memwrite = store;
-    assign memread = load;
-    assign writesrc = opClass == opcode_class::ST;
+    assign memread = (opClass == opcode_class::LDX);
+    assign writesrc = opClass == opcode_class::STX;
     assign dstSelect = end_lddw;
     assign immExtend = start_lddw ? 2'h1 : end_lddw ? 2'h2 : 0;
     assign Branch = opClass == opcode_class::JMP ? operation : jump_opcode::NO_JUMP;
@@ -103,15 +105,21 @@ module LogicalControlUnit(
                             alu_opcode::OR :
                         store || load ?
                             alu_opcode::ADD :
-                            operation;
-    assign alusrca = byteswap ? 2'h1 : store ? 2'h2 : 0;
-    assign alusrcb =    alu || (opClass == opcode_class::JMP) ?
+                            operation;                       
+    
+   
+    assign alusrca = (alu || (opClass == opcode_class::JMP) || byteswap || store || end_lddw) ? 2'b1 : load ? 2'h2 : 0; // Added in opClass statement, since Alu src always be dst when it is a jump
+    assign alusrcb =    (alu || opClass == opcode_class :: JMP) && !byteswap ?                       
                             {1'b0, immOrReg} :
-                        opClass == opcode_class::LD ?
+                            store ?
                             2'h2 :
-                            0;
+                            load && !(start_lddw || end_lddw) ? 2'h1 : 0;  // Current issue : Based on schematic 0 should select dstRead and 1 should select immExtended. This does not agree with the opcode, or this logic stated here
+                                // ALU srcb added in the size because ALUsrcB depends on Size (Truthfully should be source vs. immediate for a jump
+    
+    
+    
     assign datasize = size;
-    assign bit_32 = opClass == opcode_class::ALU32;
+    assign bit_32 = (opClass == opcode_class::ALU32) && !(byteswap);
     
     
     // exception logic

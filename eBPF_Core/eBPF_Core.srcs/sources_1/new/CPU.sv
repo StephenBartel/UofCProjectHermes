@@ -61,13 +61,15 @@ module CPU(
    wire [63:0] immLeftPad;
    wire [63:0] immRightPad;
    wire PCSrc;
-   wire [63:0] writeData;
-   assign writeData = writeData;
+   //wire [63:0] writeData;
+   //assign writeData = writeData;
    wire [63:0] readData;
    assign readData = dataFromMem;
    wire [63:0] dataAddress;
    assign addressForData = dataAddress;
-   
+   wire [3:0] dstDelayed;
+   wire dstSelect;
+   wire [3:0] dstChosen;
    
    //exception handler wires:
    wire opcodeExc;
@@ -81,10 +83,10 @@ module CPU(
    wire writeSrc;
    wire memToReg;
    wire regWrite;
-   wire memWrite;
-   assign memWrite = memWrite;
-   wire memRead;
-   assign memRead = memRead;
+   //wire memWrite;
+   //assign memWrite = memWrite;
+   //wire memRead;
+   //assign memRead = memRead;
    wire[3:0] comparatorControl; //Telling the comparator control what kind of jump operation will occur
    wire[3:0] ALUControl;
    wire[1:0] ALUSrcA;
@@ -92,6 +94,7 @@ module CPU(
    wire ALUBitSelect;
    wire PCContinue;
    wire [1:0] immExtend;
+   //wire byteSwapSelect = instruction[33:32];
    
    //PC portion of diagram
    assign nextOrFirstInstruction = (reset == 1'b1) ? firstInstructionAddress : nextInstruction;  
@@ -113,12 +116,14 @@ module CPU(
    ThirtyTwoBitRightPad ThirtyTwoBitRightPad( .a(imm), .out(immRightPad));
    ThreeToOneMux ImmMux(.a(immSignExtended), .b(immLeftPad), .c(immRightPad), .out(immExtended), .selector(immExtend));
    
+   DestReg DestReg (.dst(dst), .clk(clk), .dstDelayed(dstDelayed));
+   assign dstChosen = (dstSelect == 1'b1) ? dstDelayed : dst ;
    
-   register_file rFile(.clk(clk), .dst(dst), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite));
+   register_file rFile(.clk(clk), .reset(reset), .dst(dstChosen), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite));
    
    //Mux ouputs to ALU
-   ThreeToOneMux MuxA (.a(dstRead), .b(immExtended), .c(offsetExtended), .out(operandA), .selector(ALUSrcA));//May need to swap the selector A/B
-   ThreeToOneMux MuxB (.a(srcRead), .b(immExtended), .c(offsetExtended), .out(operandB), .selector(ALUSrcB));
+   ThreeToOneMux MuxA (.a(immExtended), .b(dstRead), .c(offsetExtended), .out(operandA), .selector(ALUSrcA));//May need to swap the selector A/B
+   ThreeToOneMux MuxB (.a(immExtended), .b(srcRead), .c(offsetExtended), .out(operandB), .selector(ALUSrcB)); //Changed out to match the new logic in control unit
    
    ALU ALU(.ALUControl(ALUControl), .is32Bit(ALUBitSelect), .operandA(operandA), .operandB(operandB), .ALUResult(ALUResult), .arithmeticExc(arithmeticExc));
   
@@ -127,7 +132,8 @@ module CPU(
    assign writeData = (writeSrc == 1'b1 ) ? srcRead : immExtended;
   
   
-   ControlUnit controlUnit(.opcode(opcode), .regwrite(regWrite), .memtoreg(memToReg), .memwrite(memWrite), .memread(memRead), .writesrc(writeSrc),
+  
+   LogicalControlUnit controlUnit(.opcode(opcode), .byteSwapSelect(instruction[33:32]), .regwrite(regWrite), .memtoreg(memToReg), .memwrite(memWrite), .memread(memRead), .writesrc(writeSrc), .dstSelect(dstSelect),
     .Branch(comparatorControl), .alucontrol(ALUControl), .alusrca(ALUSrcA), .alusrcb(ALUSrcB), .bit_32(ALUBitSelect), .immExtend(immExtend));
    
 endmodule

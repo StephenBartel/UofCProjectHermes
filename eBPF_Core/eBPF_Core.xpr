@@ -36,7 +36,7 @@
     <Option Name="IPUserFilesDir" Val="$PIPUSERFILESDIR"/>
     <Option Name="IPStaticSourceDir" Val="$PIPUSERFILESDIR/ipstatic"/>
     <Option Name="EnableBDX" Val="FALSE"/>
-    <Option Name="WTXSimLaunchSim" Val="206"/>
+    <Option Name="WTXSimLaunchSim" Val="530"/>
     <Option Name="WTModelSimLaunchSim" Val="0"/>
     <Option Name="WTQuestaLaunchSim" Val="0"/>
     <Option Name="WTIesLaunchSim" Val="0"/>
@@ -88,6 +88,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/alu_opcode.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../alu_opcode.svh"/>
+          <Attr Name="ImportTime" Val="1604964375"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/16to64SignExtend.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -127,7 +135,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ControlUnit.sv">
+      <File Path="$PSRCDIR/sources_1/new/DestReg.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
@@ -183,6 +191,29 @@
         <FileInfo>
           <Attr Name="ImportPath" Val="$PPRDIR/../Hardware_Subtractor_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/jump_opcode.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../jump_opcode.svh"/>
+          <Attr Name="ImportTime" Val="1604964375"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/memory_opcode.svh">
+        <FileInfo>
+          <Attr Name="ImportPath" Val="$PPRDIR/../memory_opcode.svh"/>
+          <Attr Name="ImportTime" Val="1604964375"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/LogicalControlUnit.sv">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -373,12 +404,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/jump_opcode.svh">
+      <File Path="$PPRDIR/../ControlUnit.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../jump_opcode.svh"/>
-          <Attr Name="ImportTime" Val="1604964375"/>
           <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -437,24 +467,6 @@
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/memory_opcode.svh">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../memory_opcode.svh"/>
-          <Attr Name="ImportTime" Val="1604964375"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/alu_opcode.svh">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="ImportPath" Val="$PPRDIR/../alu_opcode.svh"/>
-          <Attr Name="ImportTime" Val="1604964375"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
@@ -557,13 +569,6 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PPRDIR/../ControlUnit.sv">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/new/PC.sv">
         <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -616,6 +621,14 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../ControlUnit.sv">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sim_1/new/tb_Mult_32bit.sv">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -656,6 +669,412 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxh.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/lsh-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/be64.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/arsh-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jlt-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jslt-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jlt-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/rsh-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jslt-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-invalid-reg-src.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/arsh64.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-div-by-zero-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jeq-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/le64.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stb.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/be16.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxb.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxh.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-unknown-opcode.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-incomplete-lddw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-invalid-reg-dst.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/le16.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/exit.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/string-stack.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/neg64.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-jmp-out.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldx.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mul32-reg-overflow.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxh.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/jsle-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jsge-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-call-bad-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jset-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxw-all.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jeq-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jle-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/be32.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxdw.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/rsh32.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/be64.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jsgt-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/neg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mod64.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jsgt-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mod32.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stb.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mul32-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/be16-high.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxb-chain.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mul64-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/div64-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mod64.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-write-r10.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/arsh.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jge-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jne-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxdw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/be32.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mul32-reg-overflow.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ja.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-stack-oob.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/be32-high.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-mod-by-zero-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/le64.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/div32-high-divisor.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mul64-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/be32.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jsle-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/be16.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/subnet.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jslt-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-endian-size.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jgt-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-incomplete-lddw2.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jgt-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/div64-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-too-many-instructions.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxdw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-div64-by-zero-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/arsh-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/alu-arith.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/alu-bit.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxw-all.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/sth.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxw-all.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxb.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/prime.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxb-chain.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/jsge-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mul64-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxb-all.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/jeq-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/neg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/be32-high.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mod.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/lsh-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stack2.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jsge-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxh-same-reg.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-div64-by-zero-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/le32.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/alu-bit.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-unknown-opcode.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/st.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jlt-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-mod64-by-zero-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/le64.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-incomplete-lddw2.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/arsh.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxb-chain.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stack.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jset-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxh-same-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jsgt-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/lddw2.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mul32-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jne-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stdw.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-infinite-loop.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/le32.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/call-save.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mul32-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jset-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/call-memfrob.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/mul-loop.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-div-by-zero-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jsle-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stack2.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxw.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/div64-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/be64.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxb.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/div32-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jle-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/be32-high.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jsle-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/div32-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxh-all2.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-mod-by-zero-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jle-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/subnet.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/call.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/div32-high-divisor.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxh-all2.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jit-bounce.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/lddw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxb-all2.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/div64-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jgt-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxdw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jgt-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxdw.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/be16-high.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-div-by-zero-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stdw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ja.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/le16.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/exit-not-last.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mov.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxb-all.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stw.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/arsh32-high-shift.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/arsh32-high-shift.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stx.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-incomplete-lddw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-infinite-loop.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jmp.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/le16.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jsge-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxh-all.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/stxw.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxh-all2.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxdw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/early-exit.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-too-many-instructions.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jslt-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-mod64-by-zero-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/lddw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxh-all.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/alu64-bit.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/subnet.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxb-all.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxb.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-endian-size.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/alu64-bit.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-div-by-zero-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-call-bad-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-call-unreg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/alu-arith.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stdw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxh-same-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/be16-high.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stack.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxh.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxb.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/mul32-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mul-loop.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxb-all.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/sth.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/alu64-arith.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jge-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/alu64.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-jmp-lddw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/div32-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxh-all.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-invalid-reg-dst.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/le32.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxb-all2.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/ldxb-all.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/string-stack.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxh.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/arsh64.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-jmp-lddw.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/prime.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-jmp-out.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jle-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jset-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/final_memory/be16.mem">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../eBPFassembly/results/err-write-r10.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jsgt-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-stack-oob.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jeq-imm.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxb-all.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/lddw2.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/alu64-arith.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stxb-all2.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-call-unreg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/div32-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mul64-imm.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/exit-not-last.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/err-invalid-reg-src.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/exit.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/call-memfrob.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/ldxw.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/sth.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/ldxh.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/jlt-reg.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/call.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/early-exit.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/call-memfrob.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mov.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/rsh-reg.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/jit-bounce.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/call-save.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/mod32.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/alu.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/neg64.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/mod.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/results/stxb.res"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/stb.bytes"/>
+      <File Path="$PPRDIR/../eBPFassembly/bytecode/rsh32.bytes"/>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
         <Option Name="TopModule" Val="CPU_tb"/>
@@ -669,7 +1088,7 @@
         <Option Name="PamPseudoTop" Val="pseudo_tb"/>
         <Option Name="SrcSet" Val="sources_1"/>
         <Option Name="XSimWcfgFile" Val="$PPRDIR/CPU_tb_behav.wcfg"/>
-        <Option Name="xsim.simulate.runtime" Val="20ns"/>
+        <Option Name="xsim.simulate.runtime" Val="20000ns"/>
       </Config>
     </FileSet>
     <FileSet Name="utils_1" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">

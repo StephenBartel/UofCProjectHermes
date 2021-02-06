@@ -116,7 +116,7 @@ module ALU32(
       4'ha: 
            ALUResult = xor_result; // XOR
       4'hb: 
-           ALUResult = A; // Move
+           ALUResult = B; // Move // Changed to B
       4'hc: 
            ALUResult = arsh_result; // Arithmetic right shift
       4'hd, 4'he:
@@ -215,7 +215,7 @@ module ALU64(
       4'ha: 
            ALUResult = xor_result; // XOR
       4'hb: 
-           ALUResult = A; // Move
+           ALUResult = B; // Move //Changed to B
       4'hc: 
            ALUResult = arsh_result; // Arithmetic right shift
       4'hd, 4'he:

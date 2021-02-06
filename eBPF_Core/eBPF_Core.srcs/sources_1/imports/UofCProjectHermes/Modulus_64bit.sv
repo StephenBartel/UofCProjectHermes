@@ -21,9 +21,9 @@
 
 
 module Modulus_64bit(
-    input longint a,
-    input longint b,
-    output longint c
+    input [63:0] a,
+    input [63:0] b,
+    output [63:0] c
     );
     
     assign c = a%b;

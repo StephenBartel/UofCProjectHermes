@@ -24,19 +24,31 @@ module instructionMemory(
     input [63:0] instructionAddress,
     output [63:0] instruction,
     input read_instruct,
-    input string file_name
+    input string file_name,
+    input reset
     );
     
-    parameter NumInstructions = 15;
+    parameter NumInstructions = 60;
     parameter File = "instructions.txt";
+   
+   typedef logic [63:0] memLine ;
     
-    reg [63:0] mem [0 : NumInstructions - 1] ;
+    memLine mem [NumInstructions - 1 : 0] ;
     reg [63:0] instructionShifted;
-    
+    string file_name_new ;
     always @ (posedge read_instruct)
     begin
-        string file_name_new = {file_name, ".bytes"};
+        for(int i = 0 ; i < NumInstructions ; i++)
+        begin
+            mem[i] = 64'h95;
+        end
+        file_name_new = {file_name, ".bytes"};
         $readmemh(file_name_new, mem);
+    end
+    
+    always @(posedge reset)
+    begin
+        
     end
     
     assign instructionShifted = instructionAddress >>> 3;

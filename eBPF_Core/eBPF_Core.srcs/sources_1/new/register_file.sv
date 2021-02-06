@@ -26,6 +26,7 @@ import register_exception::*;
 
 module register_file(
     input clk,
+    input reset,
     input [3:0] dst,
     input [3:0] src,
     output logic [63:0] dstRead,
@@ -56,4 +57,10 @@ module register_file(
     // exception
     assign registerExc = !good_dst ? INVALID_DST : !good_src ? INVALID_SRC : NO_EXCEPTION;
     
+    
+    //reset
+    always @(reset)
+    begin
+        gprs[9:0] = 64'b0;
+    end
 endmodule

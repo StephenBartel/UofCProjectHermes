@@ -2,7 +2,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
-// 
+
 // Create Date: 01/05/2021 12:50:49 PM
 // Design Name: 
 // Module Name: dataMemory
@@ -33,21 +33,23 @@ module dataMemory(
     input string file_name
     );
     
-    parameter numData = 11;
+    parameter numData = 90;
     
-    reg[63:0] initMemory[numData -1 :0];
+    reg[7:0] initMemory[numData -1 :0];
     reg[7:0] byteMemory[numData*8 - 1:0];
     reg [63:0] offset;
     
-    always @( data_read)
+    always @( posedge data_read)
         begin 
+        
         string file_name_new = {file_name,".mem"};
         $readmemh(file_name_new, initMemory);
         
         for (int i = 0; i < numData; i++)
         begin    
-                reg [63:0] data = initMemory[i];
-                byteMemory[i*8] = data[7:0];
+                reg [7:0] data = initMemory[i];
+                byteMemory[i] = data[7:0];
+                /*
                 byteMemory[i*8 + 1] = data[15:8];
                 byteMemory[i*8 + 2] = data[23:16];
                 byteMemory[i*8 + 3] = data[31:24];
@@ -55,19 +57,18 @@ module dataMemory(
                 byteMemory[i*8 + 5] = data[47:40];
                 byteMemory[i*8 + 6] = data[55:48];
                 byteMemory[i*8 + 7] = data[63:56];
-            
+                */
         end
         
         end
     
     
     
-    always @ (posedge clk)
+    always @ (memWrite, memRead, address)
     begin
     offset = address;
-        if (memWrite == 1'b1)
+        if (memWrite == 1'b1 && memRead == 1'b0)
           begin
-               
                byteMemory[offset] = writeData[7:0];
                if(sizeSelect != 2'h2)
                begin
@@ -87,7 +88,7 @@ module dataMemory(
                end
             end
             
-        if (memRead == 1'b1)
+        if (memRead == 1'b1 && memWrite == 1'b0)
           begin
               readData = 0;
               readData[7:0] = byteMemory[offset]; 

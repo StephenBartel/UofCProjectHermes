@@ -21,9 +21,9 @@
 
 
 module Mult_32bit(
-    input int a,
-    input int b,
-    output longint y
+    input [31:0] a,
+    input [31:0] b,
+    output [31:0] y
     );
     //Can expand or do custom implementation. Reason for implementing as module
     //Used 64 bit result for 2x32bit multiplication. Can truncate or select fewer bits

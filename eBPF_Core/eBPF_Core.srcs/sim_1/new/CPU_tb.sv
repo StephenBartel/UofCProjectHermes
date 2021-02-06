@@ -46,8 +46,8 @@ module CPU_tb(
     
     
     reg instruct_read;
-    reg data_read;
-    instructionMemory instructionMemory(.instructionAddress(addressForInstruction), .instruction(instructionFromMem), .read_instruct(instruct_read), .file_name(file_name));
+    reg data_read = 0;
+    instructionMemory instructionMemory(.instructionAddress(addressForInstruction), .instruction(instructionFromMem), .read_instruct(instruct_read), .file_name(file_name), .reset(reset));
     dataMemory dataMemory(.clk(clk), .memWrite(memWrite), .memRead(memRead), .sizeSelect(sizeSelect), .writeData(writeData), .readData(dataFromMem), .address(addressForData), .data_read(data_read), .file_name(file_name));
     
     
@@ -58,6 +58,7 @@ module CPU_tb(
    reg [63:0] instructionRetrieved;
    reg [63:0] addressToAccess;
    reg [63:0] resultFromFile [1:0];
+   string  successful_tests [120:0];
    
    assign instructionRetrieved = instructionFromMem;
    assign addressToAccess = addressForInstruction;
@@ -69,28 +70,38 @@ module CPU_tb(
   	     forever
   	         #5 clk = !clk;   
   	end
-    
-   
+  	  
+
 initial
 begin
-    $display("Beginning CPU tests!"); 
-    numSuccess = 0;
-    file_name = "add";
-    instruct_read = 1;
-    data_read = 1;
-    reset = 1;
-    #15 reset = 0;
-    $readmemh("add.res" ,resultFromFile);
-    $display("Expected result : %h ", resultFromFile[0] );
-    $display(CPU.rFile.gprs[0]);
-    if(CPU.rFile.gprs[0] == resultFromFile[0]) numSuccess ++ ;
-    instruct_read = 0;
-    data_read = 0;
-    resultFromFile[0] = 0;
-    #5;
+
+	$display("Beginning CPU tests!"); 
+	numSuccess = 0;
+
+	file_name = "mul-loop" ;
+	instruct_read = 1;
+	data_read = 0;
+	reset = 1;
+	#15
+	reset = 0;
+
+	#400
+	$readmemh("mul-loop.res" ,resultFromFile);
+	if(int'(CPU.rFile.gprs[0]) == int'(resultFromFile[0])) begin
+		successful_tests[numSuccess ++] = "mul-loop.bytes";
+		$display("Success on Test: %s", file_name);
+	end else begin
+		$display("Failed on Test: %s", file_name);
+		$display("Expected result : %h ", resultFromFile[0] );
+		$display("Found result : %h ", CPU.rFile.gprs[0] );
+	end
+	instruct_read = 0;
+	data_read = 0;
+	resultFromFile[0] = 0;
+	#5;
+
 
 end
 
 
- 
 endmodule
