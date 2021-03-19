@@ -32,11 +32,16 @@ module Instruction_Mem_Interface(
     );
     
     reg [1:0] state;
+    reg [2:0] nextState;
 
     always @(coreAddress) begin
     
         state = 2'b01;
     
+    end
+    
+    always @(posedge clk) begin
+        state <= nextState;
     end
 
     always @(state, coreAddress, readReady) begin
@@ -51,7 +56,7 @@ module Instruction_Mem_Interface(
             // Core Address Changed -> Read Request
             readRequest = 1'b1;
             memAddress = coreAddress;
-            state = 2'b01;
+            nextState = 2'b01;
         
         end else if (state == 2'b10) begin
             
@@ -60,7 +65,7 @@ module Instruction_Mem_Interface(
                 
                 coreInstruction = memInstruction;
                 readRequest = 1'b0;
-                state = 2'b0;
+                nextState = 2'b0;
                 
             end
         
@@ -70,7 +75,7 @@ module Instruction_Mem_Interface(
             readRequest = 1'b0;
             coreInstruction = 64'b0;
             memAddress = 64'b0;
-            state = 2'b0;
+            nextState = 2'b0;
         
         end
     
