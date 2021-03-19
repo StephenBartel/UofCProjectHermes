@@ -1,0 +1,30 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Feb 12 11:23:47 2021
+# Process ID: 15992
+# Current directory: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16804 C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr
+# Log file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.log
+# Journal file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/simulate.log"
+launch_simulation
+Command: launch_simulation 
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/simulate.log"
+launch_simulation
+Command: launch_simulation 
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/simulate.log"
+exit
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 12 11:31:20 2021...

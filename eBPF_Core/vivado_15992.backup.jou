@@ -2,13 +2,16 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Mar  2 15:51:36 2021
-# Process ID: 2892
+# Start of session at: Fri Feb 12 11:23:47 2021
+# Process ID: 15992
 # Current directory: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26632 C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16804 C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr
 # Log file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.log
 # Journal file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core\vivado.jou
 #-----------------------------------------------------------
 start_gui
 open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr
 update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+launch_simulation
