@@ -28,7 +28,7 @@ module Controller( output reg reset, output reg [63:0] DMTop, output reg [63:0] 
         IMBottom <= 64'h0000_0000_0000; //beginnning address of DIMM A : First address for Instruction Memory
         IMTop <= 64'h0007_ffff_ffff;   //End address of DIMM B : Last address for Instruction Memory
         DMBottom <= 64'h0008_0000_0000;  //Beginning address of DIMM C : First address for Data Memory 
-        DMTop <= 64'h000f_ffff_ffff;  //End address of DIMM D : Last address for Data Memory
+        DMTop <= 64'h000f_ffff_ffff;  //End address of DIMM D : Last address for Data Memroy
         
     end
 
