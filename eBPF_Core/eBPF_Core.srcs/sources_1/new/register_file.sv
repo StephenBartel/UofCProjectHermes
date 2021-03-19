@@ -34,7 +34,7 @@ module register_file(
     input logic [63:0] dstWrite,
     input writeEnable,
     output [1:0] registerExc
-    );
+   );
     
     wire good_dst = dst < 11;
     wire good_src = src < 11;
