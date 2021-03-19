@@ -36,12 +36,12 @@ module register_file(
     output [1:0] registerExc
     );
     
-    wire good_dst = dst < 10;
-    wire good_src = src < 10;
+    wire good_dst = dst < 11;
+    wire good_src = src < 11;
     
     typedef logic [63:0] register;
     
-    register [9:0] gprs;
+    register [10:0] gprs;
     logic [3:0] last_dst;
     
     // read step    
@@ -61,6 +61,6 @@ module register_file(
     //reset
     always @(reset)
     begin
-        gprs[9:0] = 64'b0;
+        gprs[10:0] = 64'b0;
     end
 endmodule
