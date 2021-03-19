@@ -1,0 +1,761 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Fri Feb 12 11:33:52 2021
+# Process ID: 4516
+# Current directory: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent3444 C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr
+# Log file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.log
+# Journal file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
+open_project: Time (s): cpu = 00:00:14 ; elapsed = 00:00:12 . Memory (MB): peak = 1016.039 ; gain = 0.000
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be64.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16-high.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/subnet.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-chain.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32-high.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh-same-reg.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le64.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/call-memfrob.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-all2.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le16.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh-all2.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/sth.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le32.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxb-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/add.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/add.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxh.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/lsh-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be64.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/arsh-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jlt-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jslt-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jlt-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/rsh-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jslt-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-invalid-reg-src.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/arsh64.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-div-by-zero-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jeq-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-unknown-opcode.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-incomplete-lddw.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-invalid-reg-dst.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le16.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/exit.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/string-stack.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/neg64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-jmp-out.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldx.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul32-reg-overflow.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsle-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsge-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-call-bad-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jset-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw-all.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jeq-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jle-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/rsh32.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsgt-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/neg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mod64.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsgt-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mod32.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stb.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul32-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16-high.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-chain.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul64-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/div64-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mod64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-write-r10.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/arsh.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jge-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jne-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxdw.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul32-reg-overflow.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ja.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-stack-oob.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32-high.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-mod-by-zero-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le64.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/div32-high-divisor.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxw.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul64-reg.res'
+INFO: [Common 17-14] Message 'SIM-utils 43' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj CPU_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/16to64SignExtend.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SixteenBitSignExtend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/32to64SignExtend.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ThirtyTwoBitSignExtend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module ALU32
+INFO: [VRFC 10-311] analyzing module ALU64
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/And_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module And_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/And_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module And_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-2458] undeclared symbol instruction, assumed default net type wire [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv:43]
+WARNING: [VRFC 10-2938] 'instruction' is already implicitly declared on line 43 [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv:44]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/DestReg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DestReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Div_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Div_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Div_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Div_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ExceptionHandler.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExceptionHandler
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Adder_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Adder_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Adder_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Adder_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Subtractor_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Subtractor_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Subtractor_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Subtractor_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/LogicalControlUnit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LogicalControlUnit
+WARNING: [VRFC 10-3380] identifier 'recognized_opcode' is used before its declaration [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/LogicalControlUnit.sv:127]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Lsh_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Lsh_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Modulus_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modulus_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Modulus_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modulus_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Mult_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mult_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Mult_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mult_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Negation_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Negation_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Negation_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Negation_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Or_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Or_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Or_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Or_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/PC.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Rsh_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rsh_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Rsh_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rsh_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Signed_Rsh_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Signed_Rsh_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Signed_Rsh_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Signed_Rsh_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ThreeToOneMux.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ThreeToOneMux
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Xor_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Xor_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Xor_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Xor_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/byteswap.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module byteswap64
+INFO: [VRFC 10-311] analyzing module byteswap32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU_tb
+WARNING: [VRFC 10-2282] `include directive not isolated on its own line [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:23]
+WARNING: [VRFC 10-2502] extra semicolon in $unit (global) scope [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:23]
+INFO: [VRFC 10-311] analyzing module dataMemory
+WARNING: [VRFC 10-3824] variable 'file_name_new' must explicitly be declared as automatic or static [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:48]
+WARNING: [VRFC 10-3824] variable 'data' must explicitly be declared as automatic or static [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:53]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/instrucitonMemory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instructionMemory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/jump_comparator.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jump_comparator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/register_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/CPU_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU_tb
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'CPU_tb' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/CPU_tb.sv:25]
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1016.039 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '5' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xelab -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.register_exception
+Compiling package xil_defaultlib.global_exception
+Compiling package xil_defaultlib.ALU_exception
+Compiling package xil_defaultlib.opcode_class
+Compiling package xil_defaultlib.jump_opcode
+Compiling package xil_defaultlib.alu_opcode
+Compiling package xil_defaultlib.control_exception
+Compiling package xil_defaultlib.data_memory_exception
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.SixteenBitSignExtend
+Compiling module xil_defaultlib.Hardware_Adder_64bit
+Compiling module xil_defaultlib.jump_comparator
+Compiling module xil_defaultlib.ThirtyTwoBitSignExtend
+Compiling module xil_defaultlib.ThirtyTwoBitLeftPad
+Compiling module xil_defaultlib.ThirtyTwoBitRightPad
+Compiling module xil_defaultlib.ThreeToOneMux
+Compiling module xil_defaultlib.DestReg
+Compiling module xil_defaultlib.register_file
+Compiling module xil_defaultlib.Hardware_Adder_32bit
+Compiling module xil_defaultlib.Hardware_Subtractor_32bit
+Compiling module xil_defaultlib.Mult_32bit
+Compiling module xil_defaultlib.Div_32bit
+Compiling module xil_defaultlib.Or_32bit
+Compiling module xil_defaultlib.And_32bit
+Compiling module xil_defaultlib.Lsh_32bit
+Compiling module xil_defaultlib.Rsh_32bit
+Compiling module xil_defaultlib.Negation_32bit
+Compiling module xil_defaultlib.Modulus_32bit
+Compiling module xil_defaultlib.Xor_32bit
+Compiling module xil_defaultlib.Signed_Rsh_32bit
+Compiling module xil_defaultlib.byteswap32
+Compiling module xil_defaultlib.ALU32
+Compiling module xil_defaultlib.Hardware_Subtractor_64bit
+Compiling module xil_defaultlib.Mult_64bit
+Compiling module xil_defaultlib.Div_64bit
+Compiling module xil_defaultlib.Or_64bit
+Compiling module xil_defaultlib.And_64bit
+Compiling module xil_defaultlib.Lsh_64bit
+Compiling module xil_defaultlib.Rsh_64bit
+Compiling module xil_defaultlib.Negation_64bit
+Compiling module xil_defaultlib.Modulus_64bit
+Compiling module xil_defaultlib.Xor_64bit
+Compiling module xil_defaultlib.Signed_Rsh_64bit
+Compiling module xil_defaultlib.byteswap64
+Compiling module xil_defaultlib.ALU64
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.LogicalControlUnit
+Compiling module xil_defaultlib.ExceptionHandler
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.instructionMemory
+Compiling module xil_defaultlib.dataMemory
+Compiling module xil_defaultlib.CPU_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot CPU_tb_behav
+
+****** Webtalk v2020.1 (64-bit)
+  **** SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+  **** IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/xsim.dir/CPU_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-186] 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/xsim.dir/CPU_tb_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Feb 12 11:35:20 2021. For additional details about this file, please refer to the WebTalk help file at D:/Vivado/Vivado/2020.1/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Feb 12 11:35:20 2021...
+run_program: Time (s): cpu = 00:00:00 ; elapsed = 00:00:11 . Memory (MB): peak = 1016.039 ; gain = 0.000
+INFO: [USF-XSim-69] 'elaborate' step finished in '11' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "CPU_tb_behav -key {Behavioral:sim_1:Functional:CPU_tb} -tclbatch {CPU_tb.tcl} -view {C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/CPU_tb_behav.wcfg} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+open_wave_config C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/CPU_tb_behav.wcfg
+source CPU_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 100000ns
+Beginning CPU tests!
+Failed on Test: prime
+Expected result : 00000000000000x1 
+Found result : 0000000000000000 
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'CPU_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 100000ns
+launch_simulation: Time (s): cpu = 00:00:12 ; elapsed = 00:00:24 . Memory (MB): peak = 1016.039 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be64.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16-high.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/subnet.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-chain.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32-high.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh-same-reg.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le64.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/call-memfrob.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-all2.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le16.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh-all2.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/sth.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le32.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxb-all.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/add.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/add.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxh.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/lsh-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be64.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/arsh-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jlt-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jslt-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jlt-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/rsh-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jslt-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-invalid-reg-src.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/arsh64.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-div-by-zero-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jeq-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-unknown-opcode.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-incomplete-lddw.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-invalid-reg-dst.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le16.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/exit.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/string-stack.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/neg64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-jmp-out.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldx.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul32-reg-overflow.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxh.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsle-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsge-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-call-bad-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jset-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxw-all.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jeq-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jle-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ldxdw.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/rsh32.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsgt-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/neg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mod64.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jsgt-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mod32.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stb.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul32-reg.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be16-high.mem'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxb-chain.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul64-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/div64-imm.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mod64.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-write-r10.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/arsh.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jge-imm.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/jne-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxdw.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul32-reg-overflow.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/ja.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-stack-oob.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/be32-high.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/err-mod-by-zero-reg.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/le64.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/div32-high-divisor.res'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/stxw.bytes'
+INFO: [SIM-utils-43] Exported 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim/mul64-reg.res'
+INFO: [Common 17-14] Message 'SIM-utils 43' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj CPU_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/16to64SignExtend.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module SixteenBitSignExtend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/32to64SignExtend.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ThirtyTwoBitSignExtend
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ALU
+INFO: [VRFC 10-311] analyzing module ALU32
+INFO: [VRFC 10-311] analyzing module ALU64
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/And_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module And_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/And_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module And_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU
+INFO: [VRFC 10-2458] undeclared symbol instruction, assumed default net type wire [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv:43]
+WARNING: [VRFC 10-2938] 'instruction' is already implicitly declared on line 43 [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/CPU.sv:44]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/DestReg.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module DestReg
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Div_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Div_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Div_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Div_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ExceptionHandler.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ExceptionHandler
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Adder_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Adder_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Adder_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Adder_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Subtractor_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Subtractor_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Hardware_Subtractor_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Hardware_Subtractor_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/LogicalControlUnit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module LogicalControlUnit
+WARNING: [VRFC 10-3380] identifier 'recognized_opcode' is used before its declaration [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/LogicalControlUnit.sv:127]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Lsh_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Lsh_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Modulus_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modulus_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Modulus_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Modulus_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Mult_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mult_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Mult_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Mult_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Negation_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Negation_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Negation_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Negation_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Or_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Or_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Or_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Or_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/PC.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PC
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Rsh_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rsh_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Rsh_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Rsh_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Signed_Rsh_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Signed_Rsh_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Signed_Rsh_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Signed_Rsh_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ThreeToOneMux.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ThreeToOneMux
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Xor_32bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Xor_32bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/imports/UofCProjectHermes/Xor_64bit.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Xor_64bit
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/byteswap.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module byteswap64
+INFO: [VRFC 10-311] analyzing module byteswap32
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU_tb
+WARNING: [VRFC 10-2282] `include directive not isolated on its own line [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:23]
+WARNING: [VRFC 10-2502] extra semicolon in $unit (global) scope [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:23]
+INFO: [VRFC 10-311] analyzing module dataMemory
+WARNING: [VRFC 10-3824] variable 'file_name_new' must explicitly be declared as automatic or static [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:48]
+WARNING: [VRFC 10-3824] variable 'data' must explicitly be declared as automatic or static [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:53]
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/instrucitonMemory.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module instructionMemory
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/jump_comparator.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module jump_comparator
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/register_file.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module register_file
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/CPU_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module CPU_tb
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'CPU_tb' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/CPU_tb.sv:25]
+run_program: Time (s): cpu = 00:00:01 ; elapsed = 00:00:05 . Memory (MB): peak = 1016.039 ; gain = 0.000
+INFO: [USF-XSim-69] 'compile' step finished in '6' seconds
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1016.039 ; gain = 0.000
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xelab -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling package xil_defaultlib.register_exception
+Compiling package xil_defaultlib.global_exception
+Compiling package xil_defaultlib.ALU_exception
+Compiling package xil_defaultlib.opcode_class
+Compiling package xil_defaultlib.jump_opcode
+Compiling package xil_defaultlib.alu_opcode
+Compiling package xil_defaultlib.control_exception
+Compiling package xil_defaultlib.data_memory_exception
+Compiling module xil_defaultlib.PC
+Compiling module xil_defaultlib.SixteenBitSignExtend
+Compiling module xil_defaultlib.Hardware_Adder_64bit
+Compiling module xil_defaultlib.jump_comparator
+Compiling module xil_defaultlib.ThirtyTwoBitSignExtend
+Compiling module xil_defaultlib.ThirtyTwoBitLeftPad
+Compiling module xil_defaultlib.ThirtyTwoBitRightPad
+Compiling module xil_defaultlib.ThreeToOneMux
+Compiling module xil_defaultlib.DestReg
+Compiling module xil_defaultlib.register_file
+Compiling module xil_defaultlib.Hardware_Adder_32bit
+Compiling module xil_defaultlib.Hardware_Subtractor_32bit
+Compiling module xil_defaultlib.Mult_32bit
+Compiling module xil_defaultlib.Div_32bit
+Compiling module xil_defaultlib.Or_32bit
+Compiling module xil_defaultlib.And_32bit
+Compiling module xil_defaultlib.Lsh_32bit
+Compiling module xil_defaultlib.Rsh_32bit
+Compiling module xil_defaultlib.Negation_32bit
+Compiling module xil_defaultlib.Modulus_32bit
+Compiling module xil_defaultlib.Xor_32bit
+Compiling module xil_defaultlib.Signed_Rsh_32bit
+Compiling module xil_defaultlib.byteswap32
+Compiling module xil_defaultlib.ALU32
+Compiling module xil_defaultlib.Hardware_Subtractor_64bit
+Compiling module xil_defaultlib.Mult_64bit
+Compiling module xil_defaultlib.Div_64bit
+Compiling module xil_defaultlib.Or_64bit
+Compiling module xil_defaultlib.And_64bit
+Compiling module xil_defaultlib.Lsh_64bit
+Compiling module xil_defaultlib.Rsh_64bit
+Compiling module xil_defaultlib.Negation_64bit
+Compiling module xil_defaultlib.Modulus_64bit
+Compiling module xil_defaultlib.Xor_64bit
+Compiling module xil_defaultlib.Signed_Rsh_64bit
+Compiling module xil_defaultlib.byteswap64
+Compiling module xil_defaultlib.ALU64
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.LogicalControlUnit
+Compiling module xil_defaultlib.ExceptionHandler
+Compiling module xil_defaultlib.CPU
+Compiling module xil_defaultlib.instructionMemory
+Compiling module xil_defaultlib.dataMemory
+Compiling module xil_defaultlib.CPU_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot CPU_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Beginning CPU tests!
+Success on Test: prime
+relaunch_sim: Time (s): cpu = 00:00:03 ; elapsed = 00:00:14 . Memory (MB): peak = 1016.039 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj CPU_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xelab -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Beginning CPU tests!
+Success on Test: prime
+relaunch_sim: Time (s): cpu = 00:00:01 ; elapsed = 00:00:08 . Memory (MB): peak = 1016.039 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj CPU_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xelab -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Beginning CPU tests!
+Failed on Test: prime
+Expected result : 00000000000000x1 
+Found result : 0000000000000000 
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:07 . Memory (MB): peak = 1016.039 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj CPU_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xelab -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '3' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Beginning CPU tests!
+Success on Test: prime
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:12 . Memory (MB): peak = 1016.039 ; gain = 0.000
+relaunch_sim
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'CPU_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -prj CPU_tb_vlog.prj"
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+Command: launch_simulation -simset sim_1 -mode behavioral
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.sim/sim_1/behav/xsim'
+"xelab -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log"
+Vivado Simulator 2020.1
+Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot CPU_tb_behav xil_defaultlib.CPU_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:37]
+WARNING: [VRFC 10-3091] actual bit length 4 differs from formal bit length 2 for port 'arithmeticExc' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/ALU.sv:41]
+Completed static elaboration
+INFO: [XSIM 43-4323] No Change in HDL. Linking previously generated obj files to create kernel
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+Vivado Simulator 2020.1
+Time resolution is 1 ps
+Beginning CPU tests!
+Failed on Test: prime
+Expected result : 00000000000000x1 
+Found result : 0000000000000000 
+relaunch_sim: Time (s): cpu = 00:00:02 ; elapsed = 00:00:08 . Memory (MB): peak = 1016.039 ; gain = 0.000
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+WARNING: [Board 49-26] cannot add Board Part xilinx.com:vcu129:part0:1.0 available at C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/xhub/board_store/xilinx_board_store/XilinxBoardStore/Vivado/2020.1/boards/Xilinx/vcu129/production/1.0/1.0/board.xml as part xcvu29p-fsga2577-2l-e specified in board_part file is either invalid or not available
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
