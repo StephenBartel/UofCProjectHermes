@@ -22,14 +22,16 @@
 
 module instructionMemory(
     input [63:0] instructionAddress,
-    output [63:0] instruction,
+    output reg [63:0] instruction,
+    input read_request,
+    output reg readReady,
     input read_instruct,
     input string file_name,
     input reset
     );
     
-    parameter NumInstructions = 60;
-    parameter File = "instructions.txt";
+    parameter NumInstructions = 5;
+    //parameter File = "instructions.txt";
    
    typedef logic [63:0] memLine ;
     
@@ -43,15 +45,21 @@ module instructionMemory(
             mem[i] = 64'h95;
         end
         file_name_new = {file_name, ".bytes"};
-        $readmemh(file_name_new, mem);
+        $readmemh("add.bytes", mem);
     end
     
     always @(posedge reset)
     begin
         
     end
-    
-    assign instructionShifted = instructionAddress >>> 3;
-    assign instruction = ((instructionShifted) < NumInstructions)? mem[instructionShifted] : 64'd0;
+    always @(*)
+    begin
+        if(read_request == 1'b1)
+        begin
+            instructionShifted <= instructionAddress >>> 3;
+            instruction <= ((instructionShifted) < NumInstructions)? mem[instructionShifted] : 64'd0;
+            readReady <= 1'b1;
+        end
+    end
     //assign instruction = mem[1];
 endmodule

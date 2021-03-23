@@ -31,45 +31,54 @@ module Instruction_Mem_Interface(
     output reg [63:0] coreInstruction
     );
     
-    reg [1:0] state;
-    reg [2:0] nextState;
-
-    always @(coreAddress) begin
+    // Assumptions in this interface: Assumes that it will be clocked with a higher speed than the CPU
+    // Assumes that that starting address a program will be an address other than 0x0000000.. etc. 
     
-        state = 2'b01;
-    
+    reg [1:0] state = 2'b0;
+    reg [2:0] nextState = 2'b0;
+    reg [63:0] lastAddress = 64'h0;
+    initial begin
+        readRequest = 1'b0;
     end
     
     always @(posedge clk) begin
         state <= nextState;
     end
+    
+    always @(negedge clk)begin
+        lastAddress <= coreAddress;
+    end
 
-    always @(state, coreAddress, readReady) begin
+    always @(state, readReady, coreAddress) begin
     
         if (state == 2'b00) begin
-        
+            //idle
             readRequest = 1'b0;
             memAddress = 64'b0;
+            if(coreAddress != lastAddress) nextState = 2'b01;
         
-        end else if (state == 2'b01) begin
+        end 
+        else if (state == 2'b01) begin
         
             // Core Address Changed -> Read Request
             readRequest = 1'b1;
             memAddress = coreAddress;
-            nextState = 2'b01;
+            nextState = 2'b10;
         
-        end else if (state == 2'b10) begin
-            
+        end 
+        else if (state == 2'b10) begin
+            nextState = 2'b10;
             // Wait until we get readReady
             if (readReady == 1'b1) begin
                 
                 coreInstruction = memInstruction;
                 readRequest = 1'b0;
                 nextState = 2'b0;
-                
             end
+            
         
-        end else begin
+        end 
+        else begin
         
             // Some random default state
             readRequest = 1'b0;
