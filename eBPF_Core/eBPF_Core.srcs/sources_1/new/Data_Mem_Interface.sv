@@ -38,7 +38,8 @@ module Data_Mem_Interface(
     input read_ready_from_mem,
     input write_finished_from_mem,
     input write_ready_from_mem,
-    input clk
+    input clk,
+    output reg continue_to_cpu
     );
     
     typedef enum logic [2:0] {
@@ -66,6 +67,7 @@ module Data_Mem_Interface(
                 write_request_to_mem = 1'b0;
                 read_request_to_mem = 1'b0;
                 address_to_mem [63:0] = 64'h0; 
+                continue_to_cpu = 1;
                 
                 if(read_bit_from_cpu == 1'b1 && write_bit_from_cpu == 1'b0)  next_state [2:0] = DATA_MEM_READ_REQUEST;
                 if(read_bit_from_cpu == 1'b0 && write_bit_from_cpu == 1'b1) next_state [2:0] = DATA_MEM_WRITE_REQUEST;
@@ -82,6 +84,8 @@ module Data_Mem_Interface(
                 read_data_to_cpu [63:0] = 64'h0;
                 write_request_to_mem = 1'b0;
                
+                continue_to_cpu = 0;
+               
                 if(read_ready_from_mem == 1'b1) next_state[2:0] = DATA_MEM_READ_READY;
                 else next_state [2:0] = DATA_MEM_READ_REQUEST;
             end
@@ -94,6 +98,7 @@ module Data_Mem_Interface(
                 write_request_to_mem= 1'b0;
                 read_request_to_mem = 1'b0;
                 address_to_mem [63:0] = 64'h0;
+                continue_to_cpu = 1;
                 
                 next_state[2:0] = DATA_MEM_IDLE;
                 
@@ -108,6 +113,8 @@ module Data_Mem_Interface(
                 size_select_to_mem [1:0] = size_select_from_cpu;
                 read_request_to_mem = 1'b0;
                 
+                continue_to_cpu = 0;
+                
                 if(write_ready_from_mem == 1'b1) next_state [2:0] = DATA_MEM_WRITE_READY;
                 else next_state [2:0] = DATA_MEM_WRITE_REQUEST;
             end
@@ -119,6 +126,8 @@ module Data_Mem_Interface(
                 size_select_to_mem [1:0] = 2'b00;
                 write_request_to_mem = 1'b0;
                 read_request_to_mem = 1'b0;
+                
+                continue_to_cpu = 1;
                 
                 if(write_finished_from_mem == 1'b1) next_state [2:0] = DATA_MEM_IDLE;
                 else next_state [2:0] = DATA_MEM_WRITE_READY;
@@ -132,6 +141,8 @@ module Data_Mem_Interface(
                 read_request_to_mem = 1'b0;
                 address_to_mem [63:0] = 64'h0;
                 next_state [2:0] = DATA_MEM_IDLE;
+                
+                continue_to_cpu = 0;
             end
             
             default: begin
@@ -142,6 +153,7 @@ module Data_Mem_Interface(
                 read_request_to_mem = 1'b0;
                 address_to_mem [63:0] = 64'h0;
                 next_state [2:0] = DATA_MEM_IDLE;
+                continue_to_cpu = 1;
             end
             
          endcase
