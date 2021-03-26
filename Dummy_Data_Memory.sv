@@ -16,8 +16,6 @@ module Dummy_Data_Memory(
 	assign memWrite = ~read_request & write_request;
 	assign memRead = read_request & ~write_request;
 
-	logic read_ready_flag, write_ready_flag, write_finished_flag;
-
 	dataMemory memory(
 		.clk(clk),
 		.memWrite(memWrite),
@@ -28,34 +26,24 @@ module Dummy_Data_Memory(
 		.file_name("")
 	);
 
-	initial begin
-		read_ready_flag <= 1'b0;
-		write_ready_flag <= 1'b0;
-		write_finished_flag <= 1'b0;
 
-	end
 
 	always @(posedge read_request) begin
-		#($urandom_range(5,10) * 1ns);
-		read_ready_flag = 1'b1;
-		#($urandom_range(5,10) * 1ns);
-		read_ready_flag = 1'b0;
+		#($urandom_range(5,50) * 1ns);
+		read_ready = 1'b1;
+		#5ns
+		read_ready = 1'b0;
 	end
 
 	always @(posedge write_request) begin
-		#($urandom_range(5,10) * 1ns);
-		write_ready_flag = 1'b1;
-		#($urandom_range(5,10) * 1ns);
-		write_ready_flag = 1'b0;
-		write_finished_flag = 1'b1;
-		#($urandom_range(5,10) * 1ns);
-		write_finished_flag = 1'b0;
-	end
-
-	always_ff @(posedge clk) begin
-		read_ready <= read_ready_flag & ~read_ready;
-		write_ready <= write_ready_flag & ~write_ready;
-		write_finished <= write_finished_flag & ~write_finished;
+		#($urandom_range(5,50) * 1ns);
+		write_ready = 1'b1;
+		#5ns
+		write_ready = 1'b0;
+		#($urandom_range(5,50) * 1ns);
+		write_finished = 1'b1;
+		#5ns
+		write_finished = 1'b0;
 	end
 
 
