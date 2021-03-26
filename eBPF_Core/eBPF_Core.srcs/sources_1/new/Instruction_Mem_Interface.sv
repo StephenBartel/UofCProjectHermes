@@ -28,7 +28,8 @@ module Instruction_Mem_Interface(
     input clk,
     output reg readRequest,
     output reg [63:0] memAddress,
-    output reg [63:0] coreInstruction
+    output reg [63:0] coreInstruction,
+    output reg continue_to_cpu
     );
     
     // Assumptions in this interface: Assumes that it will be clocked with a higher speed than the CPU
@@ -55,6 +56,10 @@ module Instruction_Mem_Interface(
             //idle
             readRequest = 1'b0;
             memAddress = 64'b0;
+            continue_to_cpu = 1;
+            coreInstruction = 64'b0 ;
+            
+            
             if(coreAddress != lastAddress) nextState = 2'b01;
         
         end 
@@ -63,17 +68,26 @@ module Instruction_Mem_Interface(
             // Core Address Changed -> Read Request
             readRequest = 1'b1;
             memAddress = coreAddress;
+            coreInstruction = 64'b0 ;
+            continue_to_cpu = 0;
             nextState = 2'b10;
+            
         
         end 
         else if (state == 2'b10) begin
             nextState = 2'b10;
+            continue_to_cpu = 0;
+            coreInstruction = 64'b0 ;
+            readRequest = 1'b0;
+            memAddress = coreAddress;
             // Wait until we get readReady
             if (readReady == 1'b1) begin
                 
                 coreInstruction = memInstruction;
+                continue_to_cpu = 1;
                 readRequest = 1'b0;
                 nextState = 2'b0;
+               memAddress = 64'b0;
             end
             
         
@@ -84,6 +98,7 @@ module Instruction_Mem_Interface(
             readRequest = 1'b0;
             coreInstruction = 64'b0;
             memAddress = 64'b0;
+            continue_to_cpu = 1;
             nextState = 2'b0;
         
         end
