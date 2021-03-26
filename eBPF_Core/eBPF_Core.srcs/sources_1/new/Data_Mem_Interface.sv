@@ -105,7 +105,7 @@ module Data_Mem_Interface(
                 
                 write_data_to_mem [63:0] = 64'h0;
                 read_data_to_cpu [63:0] = 64'h0;
-                size_select_to_mem [1:0] = 2'b00;
+                size_select_to_mem [1:0] = size_select_from_cpu;
                 read_request_to_mem = 1'b0;
                 
                 if(write_ready_from_mem == 1'b1) next_state [2:0] = DATA_MEM_WRITE_READY;
