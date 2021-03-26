@@ -2,10 +2,10 @@
 # Vivado v2020.1 (64-bit)
 # SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
 # IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
-# Start of session at: Tue Mar  2 15:51:36 2021
-# Process ID: 2892
+# Start of session at: Fri Mar 26 13:21:02 2021
+# Process ID: 12556
 # Current directory: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent26632 C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19392 C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr
 # Log file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.log
 # Journal file: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core\vivado.jou
 #-----------------------------------------------------------
@@ -16,7 +16,137 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'.
-open_project: Time (s): cpu = 00:00:15 ; elapsed = 00:00:13 . Memory (MB): peak = 1025.016 ; gain = 0.000
+open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1029.477 ; gain = 0.000
 update_compile_order -fileset sources_1
-exit
-INFO: [Common 17-206] Exiting Vivado at Wed Mar  3 20:06:21 2021...
+synth_design -rtl -name rtl_1
+Command: synth_design -rtl -name rtl_1
+Starting synth_design
+Using part: xc7k70tfbv676-1
+Top: Data_Mem_Interface
+INFO: [Device 21-403] Loading part xc7k70tfbv676-1
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1309.559 ; gain = 249.023
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:144]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:144]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:144]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1374.836 ; gain = 314.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1374.836 ; gain = 314.301
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1374.836 ; gain = 314.301
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1374.836 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1425.277 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+RTL Elaboration Complete:  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 1487.871 ; gain = 427.336
+9 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1487.871 ; gain = 458.395
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1544.227 ; gain = 29.125
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1580.609 ; gain = 65.508
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1603.383 ; gain = 88.281
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1603.383 ; gain = 88.281
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1603.383 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 1603.383 ; gain = 88.281
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1626.383 ; gain = 22.719
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+WARNING: [Synth 8-6090] variable 'next_state' is written by both blocking and non-blocking assignments, entire logic could be removed [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:134]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1646.445 ; gain = 42.781
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1669.281 ; gain = 65.617
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1669.281 ; gain = 65.617
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1669.281 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 1669.281 ; gain = 65.617
+refresh_design
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1697.879 ; gain = 28.598
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1700.270 ; gain = 30.988
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1723.191 ; gain = 53.910
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1723.191 ; gain = 53.910
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1723.191 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 1743.895 ; gain = 74.613

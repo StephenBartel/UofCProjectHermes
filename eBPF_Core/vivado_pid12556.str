@@ -1,0 +1,456 @@
+/*
+
+Xilinx Vivado v2020.1 (64-bit) [Major: 2020, Minor: 1]
+SW Build: 2902540 on Wed May 27 19:54:49 MDT 2020
+IP Build: 2902112 on Wed May 27 22:43:36 MDT 2020
+
+Process ID (PID): 12556
+License: Customer
+
+Current time: 	Fri Mar 26 13:21:50 MDT 2021
+Time zone: 	Mountain Standard Time (America/Denver)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 8
+
+Screen size: 1920x1080
+Screen resolution (DPI): 100
+Available screens: 2
+Default font: family=Dialog,name=Dialog,style=plain,size=12
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Vivado/Vivado/2020.1/tps/win64/jre9.0.4
+Java executable location: 	D:/Vivado/Vivado/2020.1/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	andre
+User home directory: C:/Users/andre
+User working directory: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core
+User country: 	CA
+User language: 	en
+User locale: 	en_CA
+
+RDI_BASEROOT: D:/Vivado/Vivado
+HDI_APPROOT: D:/Vivado/Vivado/2020.1
+RDI_DATADIR: D:/Vivado/Vivado/2020.1/data
+RDI_BINDIR: D:/Vivado/Vivado/2020.1/bin
+
+Vivado preferences file location: C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/vivado.xml
+Vivado preferences directory: C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/
+Vivado layouts directory: C:/Users/andre/AppData/Roaming/Xilinx/Vivado/2020.1/data/layouts
+PlanAhead jar file location: 	D:/Vivado/Vivado/2020.1/lib/classes/planAhead.jar
+Vivado log file location: 	C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.log
+Vivado journal file location: 	C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/vivado.jou
+Engine tmp dir: 	C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/.Xil/Vivado-12556-DESKTOP-TU0BN25
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Vivado/Vivado/2020.1/ids_lite/ISE
+XILINX_DSP: D:/Vivado/Vivado/2020.1/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Vivado/Vivado/2020.1
+XILINX_VIVADO: D:/Vivado/Vivado/2020.1
+XILINX_VIVADO_HLS: D:/Vivado/Vivado/2020.1
+
+
+GUI allocated memory:	128 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 1,006 MB
+
+Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// bz (cs):  Open Project : addNotify
+// Opening Vivado Project: C:\Users\andre\Documents\GitHub\UofCProjectHermes\eBPF_Core\eBPF_Core.xpr. Version: Vivado v2020.1 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,006 MB. GUI used memory: 51 MB. Current time: 3/26/21, 1:21:51 PM MDT
+// Tcl Message: open_project C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.xpr 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [GUI Memory]: 106 MB (+108648kb) [00:00:21]
+// [Engine Memory]: 1,006 MB (+903797kb) [00:00:21]
+// WARNING: HEventQueue.dispatchEvent() is taking  3328 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/Vivado/2020.1/data/ip'. 
+// Project name: eBPF_Core; location: C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core; part: xc7k70tfbv676-1
+// Tcl Message: open_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:12 . Memory (MB): peak = 1029.477 ; gain = 0.000 
+dismissDialog("Open Project"); // bz (cs)
+// Tcl Command: 'rdi::info_commands {device::*}'
+// Tcl Command: 'rdi::info_commands {debug::*}'
+// Tcl Command: 'rdi::info_commands {*}'
+// [GUI Memory]: 121 MB (+10125kb) [00:00:29]
+// [GUI Memory]: 134 MB (+7263kb) [00:00:30]
+// Tcl Message: update_compile_order -fileset sources_1 
+// PAPropertyPanels.initPanels (Data_Mem_Interface.sv) elapsed time: 0.2s
+// Elapsed time: 17 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Data_Mem_Interface (Data_Mem_Interface.sv)]", 6, false); // B (F, cs)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, Data_Mem_Interface (Data_Mem_Interface.sv)]", 6, false, false, false, false, false, true); // B (F, cs) - Double Click
+selectCodeEditor("Data_Mem_Interface.sv", 80, 401); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 76, 402, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("Data_Mem_Interface.sv", 0, 56); // bP (w, cs)
+// Elapsed time: 21 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 25, 381); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 352, 407); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 330, 407); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 41, 228); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 177, 357); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 10, 226); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 10, 216); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 41, 363); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 33, 373); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 5, 213); // bP (w, cs)
+// Elapsed time: 27 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 32, 455); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 39, 465); // bP (w, cs)
+// Elapsed time: 15 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 36, 483); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 35, 485); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 35, 485); // bP (w, cs)
+// Elapsed time: 21 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 111, 460); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 20, 455); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 27, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 105, 452); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 105, 452, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("Data_Mem_Interface.sv", 25, 452); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 100, 452); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 21, 450); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 102, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 28, 447); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 110, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 28, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 108, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 13, 453); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 91, 452); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 31, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 127, 447); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 13, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 107, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 9, 451); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 119, 450); // bP (w, cs)
+// Elapsed time: 54 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 76, 405); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 173, 397); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 185, 456); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 185, 456); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 171, 448); // bP (w, cs)
+// Elapsed time: 33 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 118, 426); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 106, 421); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 110, 265); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Mem_Interface.sv", 'c'); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 73, 386); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Mem_Interface.sv", 'v'); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 272, 388); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 67, 403); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 57, 382); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Mem_Interface.sv", 'c'); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 81, 423); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Mem_Interface.sv", 'v'); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 236, 417); // bP (w, cs)
+// Elapsed time: 22 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 196, 383); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 204, 382); // bP (w, cs)
+// Elapsed time: 41 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 52, 431); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 24, 360); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 104, 378); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 26, 365); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 90, 426); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 110, 437); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 382, 517); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 112, 327); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 407, 338); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 111, 423); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 329, 427); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 110, 372); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 446, 373); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 108, 496); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 590, 501); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 128, 406); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 448, 415); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 137, 414); // bP (w, cs)
+// Elapsed time: 24 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 354, 367); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Mem_Interface.sv", 'c'); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 365, 516); // bP (w, cs)
+typeControlKey((HResource) null, "Data_Mem_Interface.sv", 'v'); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 363, 510); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 23, 325); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 27, 312); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 37, 465); // bP (w, cs)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 142 MB (+983kb) [00:07:15]
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, RTL Analysis, Open Elaborated Design]", 12, true); // u (J, cs) - Node
+// Run Command: PAResourceCommand.PACommandNames_GOTO_RTL_DESIGN
+// A (cs): Elaborate Design: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (A)
+// bz (cs):  Open Elaborated Design : addNotify
+dismissDialog("Elaborate Design"); // A (cs)
+// Tcl Message: synth_design -rtl -name rtl_1 
+// Tcl Message: Command: synth_design -rtl -name rtl_1 Starting synth_design Using part: xc7k70tfbv676-1 Top: Data_Mem_Interface 
+// TclEventType: ELABORATE_START
+// HMemoryUtils.trashcanNow. Engine heap size: 1,166 MB. GUI used memory: 77 MB. Current time: 3/26/21, 1:29:11 PM MDT
+// TclEventType: ELABORATE_FINISH
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_NEW
+// HMemoryUtils.trashcanNow. Engine heap size: 1,338 MB. GUI used memory: 77 MB. Current time: 3/26/21, 1:29:21 PM MDT
+// [Engine Memory]: 1,360 MB (+318229kb) [00:07:46]
+// DeviceModel: Load Xgds SwingWorker Join Forever elapsed time: 0.6s
+// TclEventType: DESIGN_NEW
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// [Engine Memory]: 1,456 MB (+29039kb) [00:07:48]
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2338 ms.
+// TclEventType: CURR_DESIGN_SET
+// Tcl Message: INFO: [Device 21-403] Loading part xc7k70tfbv676-1 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1309.559 ; gain = 249.023 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1374.836 ; gain = 314.301 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1374.836 ; gain = 314.301 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1374.836 ; gain = 314.301 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1374.836 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1425.277 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-111] Unisim Transformation Summary: No Unisim elements were transformed.  
+// Tcl Message: RTL Elaboration Complete:  : Time (s): cpu = 00:00:19 ; elapsed = 00:00:15 . Memory (MB): peak = 1487.871 ; gain = 427.336 
+// Tcl Message: 9 Infos, 20 Warnings, 0 Critical Warnings and 0 Errors encountered. synth_design completed successfully 
+// Tcl Message: synth_design: Time (s): cpu = 00:00:25 ; elapsed = 00:00:30 . Memory (MB): peak = 1487.871 ; gain = 458.395 
+// 'dZ' command handler elapsed time: 32 seconds
+// Elapsed time: 31 seconds
+dismissDialog("Open Elaborated Design"); // bz (cs)
+// [GUI Memory]: 162 MB (+13736kb) [00:07:51]
+// PAPropertyPanels.initPanels (write_data_to_mem_reg (RTL_LATCH4)) elapsed time: 0.4s
+// PAPropertyPanels.initPanels (write_data_to_mem_reg (RTL_LATCH4)) elapsed time: 0.2s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Data_Mem_Interface.sv", 2); // m (l, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 236, 282); // bP (w, cs)
+// Elapsed time: 10 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 273, 276); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 416, 332); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 234, 467); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 260, 434); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 264, 420); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 294, 399); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 284, 385); // bP (w, cs)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+// [GUI Memory]: 170 MB (+249kb) [00:08:42]
+// Elapsed time: 10 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 296, 431); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 238, 365); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 274, 347); // bP (w, cs)
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("Data_Mem_Interface.sv", 294, 261); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 291, 261); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 292, 180); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 293, 127); // bP (w, cs)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DESIGN_STALE
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 10 seconds
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h (ds, cs)
+// bz (cs):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,556 MB. GUI used memory: 106 MB. Current time: 3/26/21, 1:31:12 PM MDT
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// [Engine Memory]: 1,572 MB (+45373kb) [00:09:37]
+// HMemoryUtils.trashcanNow. Engine heap size: 1,572 MB. GUI used memory: 103 MB. Current time: 3/26/21, 1:31:13 PM MDT
+// Engine heap size: 1,572 MB. GUI used memory: 103 MB. Current time: 3/26/21, 1:31:13 PM MDT
+// WARNING: HEventQueue.dispatchEvent() is taking  1234 ms.
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1544.227 ; gain = 29.125 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1580.609 ; gain = 65.508 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1603.383 ; gain = 88.281 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1603.383 ; gain = 88.281 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,572 MB. GUI used memory: 80 MB. Current time: 3/26/21, 1:31:15 PM MDT
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2292 ms.
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.014 . Memory (MB): peak = 1603.383 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 1603.383 ; gain = 88.281 
+// Elapsed time: 11 seconds
+dismissDialog("Reloading"); // bz (cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 1); // m (l, cs)
+// Elapsed time: 19 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Data_Mem_Interface.sv", 2); // m (l, cs)
+// Elapsed time: 11 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 295, 297); // bP (w, cs)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h (ds, cs)
+// bz (cs):  Reloading : addNotify
+// TclEventType: ELABORATE_START
+// Tcl Message: refresh_design 
+// HMemoryUtils.trashcanNow. Engine heap size: 1,629 MB. GUI used memory: 106 MB. Current time: 3/26/21, 1:32:07 PM MDT
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,640 MB. GUI used memory: 82 MB. Current time: 3/26/21, 1:32:08 PM MDT
+// Engine heap size: 1,640 MB. GUI used memory: 82 MB. Current time: 3/26/21, 1:32:08 PM MDT
+// WARNING: HEventQueue.dispatchEvent() is taking  1024 ms.
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1626.383 ; gain = 22.719 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1646.445 ; gain = 42.781 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1669.281 ; gain = 65.617 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:07 . Memory (MB): peak = 1669.281 ; gain = 65.617 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,640 MB. GUI used memory: 82 MB. Current time: 3/26/21, 1:32:09 PM MDT
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  2339 ms.
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.013 . Memory (MB): peak = 1669.281 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:17 ; elapsed = 00:00:11 . Memory (MB): peak = 1669.281 ; gain = 65.617 
+// Elapsed time: 12 seconds
+dismissDialog("Reloading"); // bz (cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 1); // m (l, cs)
+// Elapsed time: 21 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Data_Mem_Interface.sv", 2); // m (l, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 241, 366); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 236, 367); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 271, 352); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 257, 334); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 266, 315); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 293, 297); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 285, 280); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 259, 396); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 261, 383); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 264, 383, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("Data_Mem_Interface.sv", 267, 383); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 291, 368); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 288, 348); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 258, 297); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 293, 282); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 284, 264); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 272, 331); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 256, 312); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 264, 300); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 295, 281); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 265, 309); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 288, 300); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 271, 265); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 257, 250); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 262, 234); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 266, 230, false, false, false, false, true); // bP (w, cs) - Double Click
+selectCodeEditor("Data_Mem_Interface.sv", 268, 227); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 291, 213); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 289, 199); // bP (w, cs)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
+selectButton(PAResourceOtoP.ProjectTab_RELOAD, "Reload"); // h (ds, cs)
+// bz (cs):  Reloading : addNotify
+// Tcl Message: refresh_design 
+// TclEventType: ELABORATE_START
+// HMemoryUtils.trashcanNow. Engine heap size: 1,659 MB. GUI used memory: 107 MB. Current time: 3/26/21, 1:33:22 PM MDT
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1697.879 ; gain = 28.598 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: ELABORATE_FINISH
+// TclEventType: DESIGN_REFRESH
+// [Engine Memory]: 1,693 MB (+43996kb) [00:11:52]
+// Engine heap size: 1,693 MB. GUI used memory: 83 MB. Current time: 3/26/21, 1:33:28 PM MDT
+// HMemoryUtils.trashcanNow. Engine heap size: 1,693 MB. GUI used memory: 83 MB. Current time: 3/26/21, 1:33:28 PM MDT
+// Tcl Message: INFO: [Synth 8-6157] synthesizing module 'Data_Mem_Interface' [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] INFO: [Synth 8-6155] done synthesizing module 'Data_Mem_Interface' (1#1) [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv:23] 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1700.270 ; gain = 30.988 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// Tcl Message: --------------------------------------------------------------------------------- Start Handling Custom Attributes --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1723.191 ; gain = 53.910 
+// Tcl Message: --------------------------------------------------------------------------------- --------------------------------------------------------------------------------- 
+// Tcl Message: Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1723.191 ; gain = 53.910 
+// Tcl Message: --------------------------------------------------------------------------------- 
+// TclEventType: FLOORPLAN_MODIFY
+// TclEventType: DESIGN_REFRESH
+// HMemoryUtils.trashcanNow. Engine heap size: 1,693 MB. GUI used memory: 107 MB. Current time: 3/26/21, 1:33:29 PM MDT
+// TclEventType: HFED_INIT_ROUTE_STORAGE_COMPLETED
+// Schematic: addNotify
+// WARNING: HEventQueue.dispatchEvent() is taking  1902 ms.
+// Tcl Message: Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1723.191 ; gain = 0.000 
+// Tcl Message: INFO: [Project 1-570] Preparing netlist for logic optimization 
+// Tcl Message:  Processing XDC Constraints Initializing timing engine Completed Processing XDC Constraints  
+// Tcl Message: INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s). 
+// Tcl Message: refresh_design: Time (s): cpu = 00:00:14 ; elapsed = 00:00:11 . Memory (MB): peak = 1743.895 ; gain = 74.613 
+// Elapsed time: 11 seconds
+dismissDialog("Reloading"); // bz (cs)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Schematic", 1); // m (l, cs)
+// PAPropertyPanels.initPanels (write_request_to_mem_i (RTL_ROM)) elapsed time: 0.2s
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Data_Mem_Interface.sv", 2); // m (l, cs)
+// Elapsed time: 11 seconds
+selectCodeEditor("Data_Mem_Interface.sv", 71, 436); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 3, 300); // bP (w, cs)
+selectCodeEditor("Data_Mem_Interface.sv", 6, 300); // bP (w, cs)
+// Elapsed time: 122 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (g, cs)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: DESIGN_STALE
+// TclEventType: FILE_SET_CHANGE
