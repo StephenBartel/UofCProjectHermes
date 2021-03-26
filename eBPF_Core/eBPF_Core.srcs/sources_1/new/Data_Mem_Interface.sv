@@ -96,7 +96,7 @@ module Data_Mem_Interface(
                 write_data_to_mem [63:0] = 64'h0;
                 size_select_to_mem [1:0] = 2'b00;
                 write_request_to_mem= 1'b0;
-                read_request_to_mem = 1'b0;
+                read_request_to_mem = 1'b1;  // May have issues with the interaction between this and AXI
                 address_to_mem [63:0] = 64'h0;
                 continue_to_cpu = 1;
                 
@@ -124,7 +124,7 @@ module Data_Mem_Interface(
                 
                 read_data_to_cpu [63:0] = 64'h0;
                 size_select_to_mem [1:0] = 2'b00;
-                write_request_to_mem = 1'b0;
+                write_request_to_mem = 1'b1; // May have issues with the interaction between this and AXI
                 read_request_to_mem = 1'b0;
                 
                 continue_to_cpu = 1;

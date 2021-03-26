@@ -6,6 +6,9 @@ INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitH
 INFO: [VRFC 10-311] analyzing module Data_Mem_Interface
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Dummy_Data_Memory
+WARNING: [VRFC 10-965] invalid size of integer constant literal [C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv:20]
+WARNING: [VRFC 10-965] invalid size of integer constant literal [C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv:21]
+WARNING: [VRFC 10-965] invalid size of integer constant literal [C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv:22]
 INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module CPU_tb
 WARNING: [VRFC 10-2282] `include directive not isolated on its own line [C:/Users/andre/Documents/GitHub/UofCProjectHermes/dataMemory.sv:23]

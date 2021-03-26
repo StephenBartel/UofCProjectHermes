@@ -4,7 +4,7 @@ Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'data_read' is not connected on this instance [C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv:21]
+WARNING: [VRFC 10-5021] port 'data_read' is not connected on this instance [C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv:25]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

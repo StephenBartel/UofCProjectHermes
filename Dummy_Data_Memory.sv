@@ -16,6 +16,12 @@ module Dummy_Data_Memory(
 	assign memWrite = ~read_request & write_request;
 	assign memRead = read_request & ~write_request;
 
+    initial begin
+       read_ready = 0'b0;
+	   write_ready = 0'b0;
+	   write_finished = 0'b0;
+    end
+
 	dataMemory memory(
 		.clk(clk),
 		.memWrite(memWrite),
@@ -29,18 +35,18 @@ module Dummy_Data_Memory(
 
 
 	always @(posedge read_request) begin
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,15) * 1ns);
 		read_ready = 1'b1;
 		#5ns
 		read_ready = 1'b0;
 	end
 
 	always @(posedge write_request) begin
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,15) * 1ns);
 		write_ready = 1'b1;
 		#5ns
 		write_ready = 1'b0;
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,15) * 1ns);
 		write_finished = 1'b1;
 		#5ns
 		write_finished = 1'b0;
