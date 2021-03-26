@@ -23,15 +23,12 @@ module Dummy_Data_Memory(
 		.memWrite(memWrite),
 		.memRead(memRead),
 		.sizeSelect(block_size),
-		.write_data(write_data),
-		.read_data(read_data),
+		.writeData(write_data),
+		.readData(read_data),
 		.file_name("")
 	);
 
 	initial begin
-		read_ready <= 1'b0;
-		write_ready <= 1'b0;
-		write_finished <= 1'b0;
 		read_ready_flag <= 1'b0;
 		write_ready_flag <= 1'b0;
 		write_finished_flag <= 1'b0;
@@ -39,19 +36,19 @@ module Dummy_Data_Memory(
 	end
 
 	always @(posedge read_request) begin
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,10) * 1ns);
 		read_ready_flag = 1'b1;
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,10) * 1ns);
 		read_ready_flag = 1'b0;
 	end
 
 	always @(posedge write_request) begin
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,10) * 1ns);
 		write_ready_flag = 1'b1;
-		#($urandom_range(5,50) * 1ns);
-		write_finished_flag = 1'b1;
-		#($urandom_range(5,50) * 1ns);
+		#($urandom_range(5,10) * 1ns);
 		write_ready_flag = 1'b0;
+		write_finished_flag = 1'b1;
+		#($urandom_range(5,10) * 1ns);
 		write_finished_flag = 1'b0;
 	end
 

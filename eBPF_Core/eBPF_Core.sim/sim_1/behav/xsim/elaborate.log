@@ -1,16 +1,19 @@
 Vivado Simulator 2020.1
 Copyright 1986-1999, 2001-2020 Xilinx, Inc. All Rights Reserved.
-Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_Instruction_Mem_interface_behav xil_defaultlib.tb_Instruction_Mem_interface xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Vivado/Vivado/2020.1/bin/unwrapped/win64.o/xelab.exe -wto b1d78080d7e346308dc6047affadb438 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_Data_Mem_Interface_behav xil_defaultlib.tb_Data_Mem_Interface xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'instructionMemExc' is not connected on this instance [C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sim_1/new/tb_Instruction_Mem_interface.sv:39]
+WARNING: [VRFC 10-5021] port 'data_read' is not connected on this instance [C:/Users/andre/Documents/GitHub/UofCProjectHermes/Dummy_Data_Memory.sv:21]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.instructionMemory
-Compiling module xil_defaultlib.Instruction_Mem_Interface
-Compiling module xil_defaultlib.tb_Instruction_Mem_interface
+Compiling package xil_defaultlib.data_memory_exception
+Compiling package xil_defaultlib.global_exception
+Compiling module xil_defaultlib.Data_Mem_Interface
+Compiling module xil_defaultlib.dataMemory
+Compiling module xil_defaultlib.Dummy_Data_Memory
+Compiling module xil_defaultlib.tb_Data_Mem_Interface
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_Instruction_Mem_interface_behav
+Built simulation snapshot tb_Data_Mem_Interface_behav

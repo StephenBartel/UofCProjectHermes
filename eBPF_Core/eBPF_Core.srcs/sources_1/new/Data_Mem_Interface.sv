@@ -51,8 +51,8 @@ module Data_Mem_Interface(
     DATA_MEM_EXCEPTION = 3'd5
     } data_mem_states;
     
-    data_mem_states [2:0] current_state;
-    data_mem_states [2:0] next_state;
+    data_mem_states current_state;
+    data_mem_states next_state;
     
     always @(*) begin
     

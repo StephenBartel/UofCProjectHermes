@@ -36,7 +36,7 @@ module dataMemory(
     output reg [1:0] dataMemoryExc
     );
     
-    parameter numData = 90;
+    parameter numData = 20;
     
     reg[7:0] initMemory[numData -1 :0];
     reg[7:0] byteMemory[numData*8 - 1:0];

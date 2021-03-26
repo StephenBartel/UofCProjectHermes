@@ -34,11 +34,11 @@ set rt::rc [catch {
 
     set rt::useElabCache false
     if {$rt::useElabCache == false} {
-      rt::read_verilog -sv C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Instruction_Mem_Interface.sv
+      rt::read_verilog -sv C:/Users/andre/Documents/GitHub/UofCProjectHermes/eBPF_Core/eBPF_Core.srcs/sources_1/new/Data_Mem_Interface.sv
       rt::filesetChecksum
     }
     rt::set_parameter usePostFindUniquification false
-    set rt::top Instruction_Mem_Interface
+    set rt::top Data_Mem_Interface
     rt::set_parameter enableIncremental true
     rt::set_parameter markDebugPreservationLevel "enable"
     set rt::reportTiming false

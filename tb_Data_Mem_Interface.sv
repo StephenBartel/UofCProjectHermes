@@ -28,12 +28,12 @@ module tb_Data_Mem_Interface;
 	reg clk; //Clock signal used in synchronizing the test
 	localparam clock_half_period = 10ns; //Define the period of the clock in number of time units. 2*clock_half_period = clock_period
 	//Generate clock signal
-	always @(*) begin
-		clk = 1'b1; //1
-		#clock_half_period;
-		clk = 1'b0; //0
-		#clock_half_period;
-	end
+    initial
+  	begin
+    clk = 0; 
+  	     forever
+  	         #1 clk = !clk;   
+  	end
 	//**END CLOCK**//
 
 	//*Setup the components which will be tested
@@ -112,7 +112,7 @@ module tb_Data_Mem_Interface;
 			address_from_cpu <= addresses[i];
 			size_select_from_cpu <= sizes[i];
 			write_data_from_cpu <= data[i];
-			#500ns
+			#50ns;
 		end
 
 		//cpu read all data and compare
@@ -121,7 +121,7 @@ module tb_Data_Mem_Interface;
 		for (i = 0; i < 16; i = i + 1) begin
 			address_from_cpu <= addresses[i];
 			size_select_from_cpu <= sizes[i];
-			#500ns
+			#50ns
 			if (read_data_to_cpu != data[i])
 				$display("Read data does not equal written data, expected %d, received %d", data[i], read_data_to_cpu);
 		end 
