@@ -65,24 +65,8 @@
   <FileSets Version="1" Minor="31">
     <FileSet Name="sources_1" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1">
       <Filter Type="Srcs"/>
-      <File Path="$PSRCDIR/sources_1/new/Data_Mem_Interface.sv">
-        <FileInfo>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
-      <File Path="$PSRCDIR/sources_1/new/Instruction_Mem_Interface.sv">
-        <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
-          <Attr Name="UsedIn" Val="synthesis"/>
-          <Attr Name="UsedIn" Val="implementation"/>
-          <Attr Name="UsedIn" Val="simulation"/>
-        </FileInfo>
-      </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Lsh_64bit.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Lsh_64bit.v"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -92,7 +76,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/ThirtyTwoBitLeftPad.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -100,7 +83,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/ThirtyTwoBitRightPad.v">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -108,7 +90,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/alu_opcode.svh">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../alu_opcode.svh"/>
           <Attr Name="ImportTime" Val="1604964375"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -117,14 +98,12 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/opcode.svh">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/16to64SignExtend.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -132,7 +111,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/32to64SignExtend.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -140,14 +118,12 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/exception.svh">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/ALU.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -155,7 +131,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/And_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../And_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -165,7 +140,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/And_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../And_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -173,9 +147,29 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/CPU.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../Controller.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PSRCDIR/sources_1/new/Data_Mem_Interface.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/DestReg.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -183,7 +177,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Div_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Div_32bit.sv"/>
           <Attr Name="ImportTime" Val="1605654644"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -193,7 +186,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Div_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Div_64bit.sv"/>
           <Attr Name="ImportTime" Val="1605654644"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -203,7 +195,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/ExceptionHandler.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -211,7 +202,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Hardware_Adder_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Hardware_Adder_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -221,7 +211,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Hardware_Adder_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Hardware_Adder_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -231,7 +220,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Hardware_Subtractor_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Hardware_Subtractor_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -241,7 +229,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Hardware_Subtractor_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Hardware_Subtractor_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -249,9 +236,15 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PSRCDIR/sources_1/new/Instruction_Mem_Interface.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/jump_opcode.svh">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../jump_opcode.svh"/>
           <Attr Name="ImportTime" Val="1604964375"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -260,7 +253,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/memory_opcode.svh">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../memory_opcode.svh"/>
           <Attr Name="ImportTime" Val="1604964375"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -269,7 +261,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/LogicalControlUnit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -277,7 +268,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Lsh_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Lsh_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -287,7 +277,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Modulus_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Modulus_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -297,7 +286,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Modulus_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Modulus_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -307,7 +295,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Mult_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Mult_32bit.sv"/>
           <Attr Name="ImportTime" Val="1605654644"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -317,7 +304,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/constants.svh">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../constants.svh"/>
           <Attr Name="ImportTime" Val="1604964375"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -326,7 +312,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Mult_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Mult_64bit.sv"/>
           <Attr Name="ImportTime" Val="1605654644"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -336,7 +321,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Negation_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Negation_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -346,7 +330,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Negation_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Negation_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -356,7 +339,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Or_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Or_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -366,7 +348,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Or_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Or_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -376,7 +357,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/PC.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -384,7 +364,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Rsh_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Rsh_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -394,7 +373,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Rsh_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Rsh_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -404,7 +382,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Signed_Rsh_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Signed_Rsh_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -414,7 +391,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Signed_Rsh_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Signed_Rsh_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -424,7 +400,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/ThreeToOneMux.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -432,7 +407,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Xor_32bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Xor_32bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -442,7 +416,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/imports/UofCProjectHermes/Xor_64bit.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="ImportPath" Val="$PPRDIR/../Xor_64bit.sv"/>
           <Attr Name="ImportTime" Val="1606412541"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -450,9 +423,28 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../aws-fpga/hdk/cl/developer_designs/cl_dram_dma_hacked/design/cl_dram_dma_defines.vh">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../axi_memory_interface.sv">
+        <FileInfo>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <File Path="$PSRCDIR/sources_1/new/byteswap.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="implementation"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
+      <File Path="$PPRDIR/../../aws-fpga/hdk/cl/developer_designs/cl_dram_dma_hacked/design/cl_dram_dma_pkg.sv">
+        <FileInfo>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -460,7 +452,6 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/jump_comparator.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -468,15 +459,13 @@
       </File>
       <File Path="$PSRCDIR/sources_1/new/register_file.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
-      <File Path="$PSRCDIR/sources_1/new/CPU.sv">
+      <File Path="$PSRCDIR/sources_1/new/Hermes_top.sv">
         <FileInfo>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -628,9 +617,16 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+      <File Path="$PPRDIR/../../aws-fpga/hdk/cl/developer_designs/cl_dram_dma_hacked/design/cl_id_defines.vh">
+        <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
+          <Attr Name="UsedIn" Val="synthesis"/>
+          <Attr Name="UsedIn" Val="simulation"/>
+        </FileInfo>
+      </File>
       <Config>
         <Option Name="DesignMode" Val="RTL"/>
-        <Option Name="TopModule" Val="Data_Mem_Interface"/>
+        <Option Name="TopModule" Val="Hermes_top"/>
       </Config>
     </FileSet>
     <FileSet Name="constrs_1" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">
