@@ -12,45 +12,35 @@ module Dummy_Data_Memory(
 	output [63:0] read_data
 );
 
-	logic memWrite, memRead;
-	assign memWrite = ~read_request & write_request;
-	assign memRead = read_request & ~write_request;
+	byte memory [logic[63:0]];
+	logic read_ready_ns, write_ready_ns, write_finished_ns;
 
-    initial begin
-       read_ready = 0'b0;
-	   write_ready = 0'b0;
-	   write_finished = 0'b0;
-    end
+	always_ff @(posedge clk) begin
+		read_ready <= read_ready_ns;
+		write_ready <= write_ready_ns;
+		write_finished <= write_finished_ns;
+		write_finished_ns <= write_ready;
 
-	dataMemory memory(
-		.clk(clk),
-		.memWrite(memWrite),
-		.memRead(memRead),
-		.sizeSelect(block_size),
-		.writeData(write_data),
-		.readData(read_data),
-		.file_name("")
-	);
+		if (read_request) begin
+			read_ready_ns <= 1'b1;
+			write_ready_ns <= 1'b0;
+			case(block_size)
+				2'b10: memory[address] <= write_data[7:0];
+				2'b01: memory[address + 1:address] <= write_data[15:0];
+				2'b00: memory[address + 3:address] <= write_data[31:0];
+				2'b11: memory[address + 7:address] <= write_data;
+			endcase
+		end else if (write_request) begin
+			write_ready_ns <= 1'b1;
+			read_ready_ns <= 1'b0;
+			case(block_size)
+				2'b10: read_data[7:0] <= memory[address];
+				2'b01: read_data[15:0] <= memory[address + 1:address];
+				2'b00: read_data[31:0] <= memory[address + 3:address];
+				2'b11: read_data <= memory[address + 7:address];
+			endcase
+		end else {write_ready_ns, read_ready_ns} <= '0;
 
-
-
-	always @(posedge read_request) begin
-		#($urandom_range(5,15) * 1ns);
-		read_ready = 1'b1;
-		#5ns
-		read_ready = 1'b0;
 	end
-
-	always @(posedge write_request) begin
-		#($urandom_range(5,15) * 1ns);
-		write_ready = 1'b1;
-		#5ns
-		write_ready = 1'b0;
-		#($urandom_range(5,15) * 1ns);
-		write_finished = 1'b1;
-		#5ns
-		write_finished = 1'b0;
-	end
-
 
 endmodule : Dummy_Data_Memory
