@@ -29,7 +29,8 @@ module PC(
     
     always @(posedge clk)
     begin
-        outputInstruction <= inputInstruction;
+            if(continueRunning == 1'b1)
+            outputInstruction <= inputInstruction;
     end
     
     
