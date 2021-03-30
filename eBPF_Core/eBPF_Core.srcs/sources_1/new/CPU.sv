@@ -28,6 +28,7 @@ module CPU(
     input clk,
     input[1:0] dataMemoryExc,
     input [1:0] instructionMemoryExc,
+    input PCContinue,
     output memWrite, 
     output memRead,
     output [1:0] sizeSelect,
@@ -99,7 +100,6 @@ module CPU(
    wire[1:0] ALUSrcA;
    wire[1:0] ALUSrcB;
    wire ALUBitSelect;
-   wire PCContinue;
    wire [1:0] immExtend;
    //wire byteSwapSelect = instruction[33:32];
    

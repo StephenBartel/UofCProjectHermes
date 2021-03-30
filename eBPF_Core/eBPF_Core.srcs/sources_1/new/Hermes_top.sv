@@ -42,8 +42,10 @@ module Hermes_top(
     wire [63:0] addressForInstruction;
     wire [4:0]  exception;
     wire [63:0] badAddress;
-    wire [63:0] badInstruction;  
-    wire continue_cpu; //Need to add continue logic
+    wire [63:0] badInstruction; 
+    wire continue_data_mem;
+    wire continue_instruct_mem; 
+    wire continue_cpu = continue_data_mem & continue_instruct_mem; //Need to add continue logic
     
 	wire [63:0]	 IM_address;
 	wire 		 IM_read_request;
@@ -71,7 +73,8 @@ CPU(.instructionFromMem(instructionFromMem),
 .reset(reset),
 .clk(clk),                    
 .dataMemoryExc(dataMemoryExc),          
-.instructionMemoryExc(instructionMemoryExc),   
+.instructionMemoryExc(instructionMemoryExc),  
+.PCContinue(continue_cpu),
 .memWrite(memWrite),               
 .memRead(memRead),                
 .sizeSelect(sizeSelect),             
@@ -102,7 +105,7 @@ Data_Mem_Interface Data_Mem_Interface(
 .write_finished_from_mem(DM_write_finished),
 .write_ready_from_mem(DM_write_ready),
 .clk(aclk),
-.continue_to_cpu(continue_cpu)
+.continue_to_cpu(continue_data_mem)
 );
 
 Instruction_Mem_Interface Instruction_Mem_Interface (
@@ -114,7 +117,7 @@ Instruction_Mem_Interface Instruction_Mem_Interface (
 .readRequest(IM_read_request),
 .memAddress(IM_address),
 .coreInstruction(instructionFromMem),
-.continue_to_cpu(continue_cpu)
+.continue_to_cpu(continue_instruct_mem)
 );
 
 Controller Interface_Controller(
