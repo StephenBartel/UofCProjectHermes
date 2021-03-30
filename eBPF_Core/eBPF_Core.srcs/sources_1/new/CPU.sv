@@ -29,6 +29,7 @@ module CPU(
     input[1:0] dataMemoryExc,
     input [1:0] instructionMemoryExc,
     input PCContinue,
+    input [63:0] DMBottom,
     output memWrite, 
     output memRead,
     output [1:0] sizeSelect,
@@ -133,7 +134,7 @@ module CPU(
    DestReg DestReg (.dst(dst), .clk(clk), .dstDelayed(dstDelayed));
    assign dstChosen = (dstSelect == 1'b1) ? dstDelayed : dst ;
    
-   register_file rFile(.clk(clk), .reset(reset), .dst(dstChosen), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite & PCContinue) ,.registerExc(registerExc));
+   register_file rFile(.clk(clk), .reset(reset), .dst(dstChosen), .src(src), .dstRead(dstRead), .srcRead(srcRead), .dstWrite(dstWrite), .writeEnable(regWrite & PCContinue), .stackPointer(DMBottom) ,.registerExc(registerExc));
    
    //Mux ouputs to ALU
    ThreeToOneMux MuxA (.a(immExtended), .b(dstRead), .c(offsetExtended), .out(operandA), .selector(ALUSrcA));//May need to swap the selector A/B
