@@ -33,10 +33,11 @@ module register_file(
     output logic [63:0] srcRead,
     input logic [63:0] dstWrite,
     input writeEnable,
+    input logic [63:0] stackPointer,
     output [1:0] registerExc
    );
     
-    wire good_dst = dst < 11;
+    wire good_dst = dst < 10;
     wire good_src = src < 11;
     
     typedef logic [63:0] register;
@@ -50,7 +51,10 @@ module register_file(
     
     // write step
     always_ff @(posedge clk) begin
-        if (writeEnable && good_dst)
+    	if (reset) begin
+    		gprs[9:0] <='0;
+    		gprs[10] <= stackPointer;
+        end else if (writeEnable && good_dst)
             gprs[dst] <= dstWrite;
     end
     
